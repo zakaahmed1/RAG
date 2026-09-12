@@ -1,50 +1,23 @@
 # RAG App – Retrieval-Augmented Generation
 
-A simple RAG application built in Python which utilises Generative AI models to answer customer queries using an external data source.
+A modular Retrieval-Augmented Generation application built in Python.
+The application retrieves relevant information from an external knowledge
+base and uses a Hugging Face language model to generate grounded answers.
 
-## 🚀 Features
+## Features
 
-- 🔎 Vector-based semantic search using FAISS or ChromaDB
-- 📖 Document ingestion and chunking (e.g., PDFs, Markdown, HTML)
-- 🧠 LLM integration using Hugging Face models
-- 🤖 Retrieval-Augmented Q&A with context injection
+- Vector-based semantic search using FAISS
+- Text document ingestion and recursive chunking
+- Hugging Face sentence-transformer embeddings
+- Retrieval-Augmented Generation with context injection
+- Local Hugging Face language model generation
+- Modular ingestion, retrieval and generation components
+- Basic unsupported-question handling
 
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Python
 - LangChain
 - Hugging Face Transformers
+- sentence-transformers
 - FAISS
-- dotenv for managing environment variables
-
----
-
-## Usage
-
-1. **Install dependencies**
-
-   Use Python 3.10 or later and install the required packages:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Run the application**
-
-   Execute the main script which will ingest `ExampleCompanyPolicy.txt` and start an interactive question loop:
-
-   ```bash
-   python rag_app.py
-   ```
-
-3. **Ask questions**
-
-   When prompted, type a question about the document. Type `exit` to quit.
-
-   ```text
-   Ask a question (or type 'exit' to quit): What is the company policy on remote work?
-   ```
-
-   The app retrieves relevant document sections, sends them to a lightweight LLM, and prints the generated answer.

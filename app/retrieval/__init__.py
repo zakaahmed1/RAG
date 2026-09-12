@@ -1,0 +1,1 @@
+"""Embedding, vector storage and document retrieval functionality."""
