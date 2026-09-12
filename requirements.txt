@@ -7,3 +7,5 @@ faiss-cpu
 transformers
 huggingface-hub
 accelerate
+pypdf
+docx2txt

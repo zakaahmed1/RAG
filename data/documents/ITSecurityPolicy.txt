@@ -1,0 +1,7 @@
+Example Company IT Security Policy
+
+Employees must change their corporate passwords every 90 days.
+
+Multi-factor authentication is mandatory for all remote access.
+
+Lost or stolen company devices must be reported to IT within 2 hours.

@@ -3,3 +3,17 @@ __pycache__/
 *.pyc
 *.sqlite3
 venv/
+
+# Generated vector store
+storage/faiss_index/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# IDE / OS
+.vscode/
+.DS_Store

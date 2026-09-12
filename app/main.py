@@ -1,42 +1,42 @@
-from app.ingestion.loader import load_and_split_documents
-from app.retrieval.vector_store import (
-    create_vector_store,
-    create_retriever,
-)
 from app.generation.generator import (
     create_generator,
     generate_answer,
+)
+from app.retrieval.vector_store import (
+    create_retriever,
+    load_vector_store,
 )
 
 
 def initialise_rag():
     """
-    Initialise the complete RAG pipeline.
+    Initialise the RAG pipeline using an existing
+    persistent FAISS vector store.
     """
 
-    print("Loading and chunking documents...")
+    print(
+        "Loading persistent FAISS vector store..."
+    )
 
-    chunks = load_and_split_documents()
+    vector_store = load_vector_store()
 
-    print(f"Created {len(chunks)} document chunks.")
+    print(
+        "Creating retriever..."
+    )
 
+    retriever = create_retriever(
+        vector_store
+    )
 
-    print("Creating vector store...")
-
-    vector_store = create_vector_store(chunks)
-
-
-    print("Creating retriever...")
-
-    retriever = create_retriever(vector_store)
-
-
-    print("Loading language model...")
+    print(
+        "Loading language model..."
+    )
 
     generator = create_generator()
 
-
-    print("RAG assistant ready.")
+    print(
+        "RAG assistant ready."
+    )
 
     return retriever, generator
 
@@ -59,19 +59,20 @@ def run():
             break
 
         if not question:
-            print("Please enter a question.")
+            print(
+                "Please enter a question."
+            )
             continue
 
-
-        retrieved_documents = retriever.invoke(question)
-
+        retrieved_documents = retriever.invoke(
+            question
+        )
 
         answer = generate_answer(
             generator=generator,
             question=question,
             retrieved_documents=retrieved_documents,
         )
-
 
         print("\n--- Answer ---")
         print(answer)
