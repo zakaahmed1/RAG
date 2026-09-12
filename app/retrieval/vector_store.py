@@ -14,7 +14,10 @@ def create_embedding_model():
     """
 
     embeddings = HuggingFaceEmbeddings(
-        model_name=EMBEDDING_MODEL_NAME
+        model_name=EMBEDDING_MODEL_NAME,
+        encode_kwargs={
+            "normalize_embeddings": True
+        }
     )
 
     return embeddings
@@ -78,17 +81,3 @@ def load_vector_store():
     )
 
     return vector_store
-
-
-def create_retriever(vector_store):
-    """
-    Create a retriever from the FAISS vector store.
-    """
-
-    retriever = vector_store.as_retriever(
-        search_kwargs={
-            "k": TOP_K
-        }
-    )
-
-    return retriever

@@ -22,30 +22,65 @@ def create_generator():
     return tokenizer, model
 
 
-def build_context(retrieved_documents):
+def build_context(retrieved_chunks):
     """
-    Combine retrieved document chunks into a single
-    context string for the language model.
+    Build source-aware context from retrieved chunks.
     """
 
-    context = "\n\n".join(
-        document.page_content
-        for document in retrieved_documents
+    context_parts = []
+
+    for index, chunk in enumerate(
+        retrieved_chunks,
+        start=1,
+    ):
+
+        document = chunk.document
+        metadata = document.metadata
+
+        file_name = metadata.get(
+            "file_name",
+            "Unknown source",
+        )
+
+        page_number = metadata.get(
+            "page_number"
+        )
+
+        if page_number is not None:
+            source = (
+                f"{file_name}, page {page_number}"
+            )
+        else:
+            source = file_name
+
+        context_parts.append(
+            f"[Source {index}: {source}]\n"
+            f"{document.page_content}"
+        )
+
+    return "\n\n".join(
+        context_parts
     )
-
-    return context
 
 
 def build_prompt(question, context):
     """
-    Construct a grounded RAG prompt using retrieved context.
+    Construct a grounded RAG prompt.
     """
 
     prompt = f"""
-Answer the question using only the context provided below.
+You are a grounded knowledge assistant.
+
+Answer the user's question using only the supplied context.
+
+Do not use outside knowledge.
+
+Do not invent facts that are not present in the context.
 
 If the context does not contain enough information to answer
-the question, say that you do not have enough information.
+the question, respond:
+
+"I could not find sufficient information in the supplied documents."
 
 Context:
 {context}
@@ -62,7 +97,7 @@ Answer:
 def generate_answer(
     generator,
     question,
-    retrieved_documents,
+    retrieved_chunks,
 ):
     """
     Generate an answer using retrieved document context.
@@ -71,7 +106,7 @@ def generate_answer(
     tokenizer, model = generator
 
     context = build_context(
-        retrieved_documents
+        retrieved_chunks
     )
 
     prompt = build_prompt(

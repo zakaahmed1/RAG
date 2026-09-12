@@ -45,7 +45,14 @@ EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 # Retrieval
 # ---------------------------------------------------------
 
+RETRIEVAL_MODE = "mmr"
+
 TOP_K = 4
+FETCH_K = 12
+
+MMR_LAMBDA_MULT = 0.7
+
+MIN_SIMILARITY = 0.30
 
 
 # ---------------------------------------------------------

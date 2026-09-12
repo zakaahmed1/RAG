@@ -2,16 +2,21 @@ from app.generation.generator import (
     create_generator,
     generate_answer,
 )
+
+from app.retrieval.search import (
+    format_source_reference,
+    retrieve_documents,
+)
+
 from app.retrieval.vector_store import (
-    create_retriever,
     load_vector_store,
 )
 
 
 def initialise_rag():
     """
-    Initialise the RAG pipeline using an existing
-    persistent FAISS vector store.
+    Initialise the RAG pipeline using the persisted
+    FAISS vector store.
     """
 
     print(
@@ -19,14 +24,6 @@ def initialise_rag():
     )
 
     vector_store = load_vector_store()
-
-    print(
-        "Creating retriever..."
-    )
-
-    retriever = create_retriever(
-        vector_store
-    )
 
     print(
         "Loading language model..."
@@ -38,7 +35,7 @@ def initialise_rag():
         "RAG assistant ready."
     )
 
-    return retriever, generator
+    return vector_store, generator
 
 
 def run():
@@ -46,12 +43,13 @@ def run():
     Run the command-line RAG assistant.
     """
 
-    retriever, generator = initialise_rag()
+    vector_store, generator = initialise_rag()
 
     while True:
 
         question = input(
-            "\nAsk a question (or type 'exit' to quit): "
+            "\nAsk a question "
+            "(or type 'exit' to quit): "
         ).strip()
 
         if question.lower() == "exit":
@@ -64,15 +62,52 @@ def run():
             )
             continue
 
-        retrieved_documents = retriever.invoke(
-            question
+        retrieved_chunks = retrieve_documents(
+            vector_store,
+            question,
         )
+
+        if not retrieved_chunks:
+
+            print(
+                "\n--- Answer ---"
+            )
+
+            print(
+                "I could not find sufficient "
+                "information in the supplied documents."
+            )
+
+            continue
 
         answer = generate_answer(
             generator=generator,
             question=question,
-            retrieved_documents=retrieved_documents,
+            retrieved_chunks=retrieved_chunks,
         )
 
-        print("\n--- Answer ---")
+        print(
+            "\n--- Answer ---"
+        )
+
         print(answer)
+
+        print(
+            "\n--- Sources ---"
+        )
+
+        for index, chunk in enumerate(
+            retrieved_chunks,
+            start=1,
+        ):
+
+            source = format_source_reference(
+                chunk
+            )
+
+            print(
+                f"[{index}] "
+                f"{source} "
+                f"(similarity: "
+                f"{chunk.similarity:.3f})"
+            )

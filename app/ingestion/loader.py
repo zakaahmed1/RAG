@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from cloup import file_path
+from cloup import file_path
 from langchain_community.document_loaders import (
     Docx2txtLoader,
     PyPDFLoader,
@@ -78,9 +80,11 @@ def load_documents():
 
         for document in loaded_documents:
 
-            # Avoid exposing machine-specific absolute paths later.
             document.metadata["file_name"] = file_path.name
             document.metadata["file_type"] = file_path.suffix.lower()
+            document.metadata["source_path"] = str(
+                file_path.relative_to(DOCUMENTS_DIR)
+            )
 
             # PyPDFLoader provides zero-indexed page metadata.
             if "page" in document.metadata:
