@@ -1,4 +1,4 @@
-from transformers import pipeline
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 from app.config import (
     GENERATOR_MODEL_NAME,
@@ -8,15 +8,18 @@ from app.config import (
 
 def create_generator():
     """
-    Load the Hugging Face text generation pipeline.
+    Load the tokenizer and sequence-to-sequence language model.
     """
 
-    generator = pipeline(
-        "text2text-generation",
-        model=GENERATOR_MODEL_NAME,
+    tokenizer = AutoTokenizer.from_pretrained(
+        GENERATOR_MODEL_NAME
     )
 
-    return generator
+    model = AutoModelForSeq2SeqLM.from_pretrained(
+        GENERATOR_MODEL_NAME
+    )
+
+    return tokenizer, model
 
 
 def build_context(retrieved_documents):
@@ -35,7 +38,7 @@ def build_context(retrieved_documents):
 
 def build_prompt(question, context):
     """
-    Construct a grounded RAG prompt using the retrieved context.
+    Construct a grounded RAG prompt using retrieved context.
     """
 
     prompt = f"""
@@ -56,23 +59,40 @@ Answer:
     return prompt
 
 
-def generate_answer(generator, question, retrieved_documents):
+def generate_answer(
+    generator,
+    question,
+    retrieved_documents,
+):
     """
     Generate an answer using retrieved document context.
     """
 
-    context = build_context(retrieved_documents)
+    tokenizer, model = generator
+
+    context = build_context(
+        retrieved_documents
+    )
 
     prompt = build_prompt(
         question=question,
         context=context,
     )
 
-    result = generator(
+    inputs = tokenizer(
         prompt,
+        return_tensors="pt",
+        truncation=True,
+    )
+
+    outputs = model.generate(
+        **inputs,
         max_new_tokens=MAX_NEW_TOKENS,
     )
 
-    answer = result[0]["generated_text"]
+    answer = tokenizer.decode(
+        outputs[0],
+        skip_special_tokens=True,
+    )
 
     return answer.strip()
