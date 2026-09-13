@@ -1,0 +1,269 @@
+[
+  {
+    "id": "HB001",
+    "question": "How many days per week can employees work remotely?",
+    "supported": true,
+    "retrieved_count": 4,
+    "top_similarity": 0.7033544182777405,
+    "sources": [
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "similarity": 0.7034
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "similarity": 0.653
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "similarity": 0.4639
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "similarity": 0.4542
+      }
+    ],
+    "answer": "3 days per week.",
+    "hit_at_k": 1,
+    "reciprocal_rank": 0.5,
+    "relevant_rank": 2,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "HB002",
+    "question": "By what time must an employee report sickness?",
+    "supported": true,
+    "retrieved_count": 4,
+    "top_similarity": 0.7020303010940552,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "similarity": 0.702
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "similarity": 0.5983
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "similarity": 0.6906
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "similarity": 0.4626
+      }
+    ],
+    "answer": "9:00 a.m.",
+    "hit_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "HB003",
+    "question": "How quickly must a suspected personal data incident be reported?",
+    "supported": true,
+    "retrieved_count": 4,
+    "top_similarity": 0.7122724652290344,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "similarity": 0.7123
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "similarity": 0.4457
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 10,
+        "similarity": 0.363
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "similarity": 0.4366
+      }
+    ],
+    "answer": "within one hour of discovery.",
+    "hit_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "HB004",
+    "question": "What is the maximum hotel expense per night in London?",
+    "supported": true,
+    "retrieved_count": 2,
+    "top_similarity": 0.6595187187194824,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 8,
+        "similarity": 0.6595
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 8,
+        "similarity": 0.3237
+      }
+    ],
+    "answer": "\u00a3150.",
+    "hit_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "HB005",
+    "question": "What is the annual professional development budget?",
+    "supported": true,
+    "retrieved_count": 2,
+    "top_similarity": 0.6247742474079132,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "similarity": 0.6248
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "similarity": 0.4055
+      }
+    ],
+    "answer": "\u00a3750.",
+    "hit_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "HB006",
+    "question": "How much can remote employees claim for home-working equipment?",
+    "supported": true,
+    "retrieved_count": 4,
+    "top_similarity": 0.7271604239940643,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "similarity": 0.7272
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "similarity": 0.4757
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "similarity": 0.3991
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "similarity": 0.3854
+      }
+    ],
+    "answer": "\u00a3250.",
+    "hit_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "UN001",
+    "question": "What is the CEO's salary?",
+    "supported": false,
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN002",
+    "question": "What is the company's current share price?",
+    "supported": false,
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN003",
+    "question": "When does the company's office lease expire?",
+    "supported": false,
+    "retrieved_count": 2,
+    "top_similarity": 0.35358893871307373,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "similarity": 0.3536
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "similarity": 0.3149
+      }
+    ],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": false,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN004",
+    "question": "What was the company's revenue last financial year?",
+    "supported": false,
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  }
+]

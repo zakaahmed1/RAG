@@ -1,0 +1,49 @@
+{
+  "questions": 10,
+  "supported_questions": 8,
+  "unsupported_questions": 2,
+  "hit_rate_at_k": 1,
+  "evidence_recall": 1.0,
+  "mrr": 0.9166666666666666,
+  "unsupported_rejection_accuracy": 0.5,
+  "categories": {
+    "ambiguous_adversarial": {
+      "questions": 1,
+      "supported_questions": 1,
+      "unsupported_questions": 0,
+      "hit_rate_at_k": 1,
+      "evidence_recall": 1.0,
+      "mrr": 1.0
+    },
+    "cross_policy_multi_document": {
+      "questions": 1,
+      "supported_questions": 1,
+      "unsupported_questions": 0,
+      "hit_rate_at_k": 1,
+      "evidence_recall": 1.0,
+      "mrr": 1.0
+    },
+    "direct_supported": {
+      "questions": 3,
+      "supported_questions": 3,
+      "unsupported_questions": 0,
+      "hit_rate_at_k": 1,
+      "evidence_recall": 1.0,
+      "mrr": 1.0
+    },
+    "paraphrased_supported": {
+      "questions": 3,
+      "supported_questions": 3,
+      "unsupported_questions": 0,
+      "hit_rate_at_k": 1,
+      "evidence_recall": 1.0,
+      "mrr": 0.7777777777777778
+    },
+    "unsupported": {
+      "questions": 2,
+      "supported_questions": 0,
+      "unsupported_questions": 2,
+      "unsupported_rejection_accuracy": 0.5
+    }
+  }
+}

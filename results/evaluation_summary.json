@@ -1,0 +1,10 @@
+{
+  "questions": 10,
+  "supported_questions": 6,
+  "unsupported_questions": 4,
+  "hit_rate_at_k": 1,
+  "mrr": 0.9166666666666666,
+  "unsupported_rejection_accuracy": 0.75,
+  "supported_answer_keyword_coverage": 1.0,
+  "unsupported_answer_abstention_accuracy": 1
+}

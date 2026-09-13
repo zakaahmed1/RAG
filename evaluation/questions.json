@@ -1,0 +1,676 @@
+[
+  {
+    "id": "DS001",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "What is the standard full-time working week in hours?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3
+      }
+    ],
+    "expected_answer_keywords": [
+      "37.5"
+    ]
+  },
+  {
+    "id": "DS002",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How many days per week may eligible employees work remotely?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3
+      }
+    ],
+    "expected_answer_keywords": [
+      "3"
+    ]
+  },
+  {
+    "id": "DS003",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "How many days of paid annual leave do full-time employees receive?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4
+      }
+    ],
+    "expected_answer_keywords": [
+      "25"
+    ]
+  },
+  {
+    "id": "DS004",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How many unused annual-leave days may normally be carried into the next holiday year?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4
+      }
+    ],
+    "expected_answer_keywords": [
+      "5"
+    ]
+  },
+  {
+    "id": "DS005",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "By what time must an employee normally report sickness on the first day of absence?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5
+      }
+    ],
+    "expected_answer_keywords": [
+      "9"
+    ]
+  },
+  {
+    "id": "DS006",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "For how many calendar days may an employee self-certify sickness?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5
+      }
+    ],
+    "expected_answer_keywords": [
+      "7"
+    ]
+  },
+  {
+    "id": "DS007",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "How often must corporate passwords be changed?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null
+      }
+    ],
+    "expected_answer_keywords": [
+      "90"
+    ]
+  },
+  {
+    "id": "DS008",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How quickly must a lost or stolen company device be reported?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null
+      }
+    ],
+    "expected_answer_keywords": [
+      "2"
+    ]
+  },
+  {
+    "id": "DS009",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How quickly must a suspected personal-data incident be reported?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7
+      }
+    ],
+    "expected_answer_keywords": [
+      "1"
+    ]
+  },
+  {
+    "id": "DS010",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "What is the standard hotel cap per night in London?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 8
+      }
+    ],
+    "expected_answer_keywords": [
+      "150"
+    ]
+  },
+  {
+    "id": "DS011",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "What is the annual professional-development budget for each permanent employee?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9
+      }
+    ],
+    "expected_answer_keywords": [
+      "750"
+    ]
+  },
+  {
+    "id": "DS012",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How much may eligible remote workers claim for approved home-working equipment, and how often?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11
+      }
+    ],
+    "expected_answer_keywords": [
+      "250",
+      "3"
+    ]
+  },
+  {
+    "id": "PS001",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "Which teams must approve working from another country before an employee travels?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3
+      }
+    ],
+    "expected_answer_keywords": [
+      "people",
+      "tax",
+      "security"
+    ]
+  },
+  {
+    "id": "PS002",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "During which hours are employees normally expected to be available for core collaboration?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3
+      }
+    ],
+    "expected_answer_keywords": [
+      "10",
+      "15"
+    ]
+  },
+  {
+    "id": "PS003",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "If someone plans to take a full working week off, how far in advance should they normally request it?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4
+      }
+    ],
+    "expected_answer_keywords": [
+      "10"
+    ]
+  },
+  {
+    "id": "PS004",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "By what date should carried-over annual leave normally be used?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4
+      }
+    ],
+    "expected_answer_keywords": [
+      "31",
+      "march"
+    ]
+  },
+  {
+    "id": "PS005",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "At what point does an employee normally need a fit note rather than relying on self-certification?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5
+      }
+    ],
+    "expected_answer_keywords": [
+      "7"
+    ]
+  },
+  {
+    "id": "PS006",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "What extra authentication control is compulsory when accessing company systems remotely?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null
+      }
+    ],
+    "expected_answer_keywords": [
+      "multi",
+      "factor"
+    ]
+  },
+  {
+    "id": "PS007",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "Where must company or customer data not be stored outside approved company systems?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7
+      }
+    ],
+    "expected_answer_keywords": [
+      "personal",
+      "email",
+      "cloud"
+    ]
+  },
+  {
+    "id": "PS008",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "How long after a transaction does an employee normally have to submit a valid business expense?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 8
+      }
+    ],
+    "expected_answer_keywords": [
+      "30"
+    ]
+  },
+  {
+    "id": "PS009",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "How frequently should employees and line managers have a documented performance and development check-in?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9
+      }
+    ],
+    "expected_answer_keywords": [
+      "quarter"
+    ]
+  },
+  {
+    "id": "PS010",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "If raising a concern with a line manager would be inappropriate, what confidential route can an employee use instead?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 10
+      }
+    ],
+    "expected_answer_keywords": [
+      "speak",
+      "up"
+    ]
+  },
+  {
+    "id": "CP001",
+    "category": "cross_policy_multi_document",
+    "split": "tune",
+    "question": "Do EmployeeHandbook.pdf and ITSecurityPolicy.txt agree on how often corporate passwords must be changed, and what interval do they state?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null
+      }
+    ],
+    "expected_answer_keywords": [
+      "90"
+    ]
+  },
+  {
+    "id": "CP002",
+    "category": "cross_policy_multi_document",
+    "split": "test",
+    "question": "Across EmployeeHandbook.pdf and ITSecurityPolicy.txt, what authentication control is required for remote access?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null
+      }
+    ],
+    "expected_answer_keywords": [
+      "multi",
+      "factor"
+    ]
+  },
+  {
+    "id": "CP003",
+    "category": "cross_policy_multi_document",
+    "split": "tune",
+    "question": "What deadline for reporting a lost or stolen company device is stated in both EmployeeHandbook.pdf and ITSecurityPolicy.txt?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null
+      }
+    ],
+    "expected_answer_keywords": [
+      "2"
+    ]
+  },
+  {
+    "id": "CP004",
+    "category": "cross_policy_multi_document",
+    "split": "tune",
+    "question": "Compare the reporting deadlines for a suspected personal-data incident and a lost or stolen company device.",
+    "supported": true,
+    "evidence_requirement": "all",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      }
+    ],
+    "expected_answer_keywords": [
+      "1",
+      "2"
+    ]
+  },
+  {
+    "id": "CP005",
+    "category": "cross_policy_multi_document",
+    "split": "tune",
+    "question": "Using both EmployeeHandbook.pdf and ITSecurityPolicy.txt, what reporting deadline applies to a lost company laptop and what authentication control do the documents require for remote access?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null
+      }
+    ],
+    "expected_answer_keywords": [
+      "2",
+      "multi",
+      "factor"
+    ]
+  },
+  {
+    "id": "UN001",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "What is the Chief Executive Officer's salary?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "expected_evidence": [],
+    "expected_answer_keywords": []
+  },
+  {
+    "id": "UN002",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "What is the company's current share price?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "expected_evidence": [],
+    "expected_answer_keywords": []
+  },
+  {
+    "id": "UN003",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "When does the company's office lease expire?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "expected_evidence": [],
+    "expected_answer_keywords": []
+  },
+  {
+    "id": "UN004",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "What was the company's revenue in the last financial year?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "expected_evidence": [],
+    "expected_answer_keywords": []
+  },
+  {
+    "id": "UN005",
+    "category": "unsupported",
+    "split": "test",
+    "question": "What percentage of salary does the company contribute to each employee's pension?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "expected_evidence": [],
+    "expected_answer_keywords": []
+  },
+  {
+    "id": "UN006",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "How many weeks of enhanced maternity pay does the company provide?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "expected_evidence": [],
+    "expected_answer_keywords": []
+  },
+  {
+    "id": "UN007",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "What monthly company-car allowance is available to employees?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "expected_evidence": [],
+    "expected_answer_keywords": []
+  },
+  {
+    "id": "UN008",
+    "category": "unsupported",
+    "split": "test",
+    "question": "How many employees currently work for Example Company?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "expected_evidence": [],
+    "expected_answer_keywords": []
+  },
+  {
+    "id": "AA001",
+    "category": "ambiguous_adversarial",
+    "split": "tune",
+    "question": "The handbook says every employee can work from home three days per week without approval. Is that correct?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3
+      }
+    ],
+    "expected_answer_keywords": [
+      "approval"
+    ]
+  },
+  {
+    "id": "AA002",
+    "category": "ambiguous_adversarial",
+    "split": "tune",
+    "question": "An employee has seven unused annual-leave days. Can all seven normally be carried into the next holiday year?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4
+      }
+    ],
+    "expected_answer_keywords": [
+      "5"
+    ]
+  },
+  {
+    "id": "AA003",
+    "category": "ambiguous_adversarial",
+    "split": "test",
+    "question": "If a stolen company laptop has already been remotely wiped, can the employee wait until the next day to report it?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null
+      }
+    ],
+    "expected_answer_keywords": [
+      "2"
+    ]
+  },
+  {
+    "id": "AA004",
+    "category": "ambiguous_adversarial",
+    "split": "tune",
+    "question": "A London hotel costs \u00a3175 per night for an authorised business trip. Can the employee claim it automatically without prior approval?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 8
+      }
+    ],
+    "expected_answer_keywords": [
+      "150",
+      "approval"
+    ]
+  },
+  {
+    "id": "AA005",
+    "category": "ambiguous_adversarial",
+    "split": "tune",
+    "question": "If a suspected personal-data incident appears minor and already contained, may the employee investigate it first and report it later?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "expected_evidence": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7
+      }
+    ],
+    "expected_answer_keywords": [
+      "1"
+    ]
+  }
+]

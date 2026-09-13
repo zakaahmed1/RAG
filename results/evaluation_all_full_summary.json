@@ -1,0 +1,61 @@
+{
+  "questions": 40,
+  "supported_questions": 32,
+  "unsupported_questions": 8,
+  "hit_rate_at_k": 1,
+  "evidence_recall": 1.0,
+  "mrr": 0.9479166666666666,
+  "unsupported_rejection_accuracy": 0.875,
+  "supported_answer_keyword_coverage": 0.7760416666666666,
+  "supported_answer_abstention_rate": 0,
+  "unsupported_answer_abstention_accuracy": 1,
+  "categories": {
+    "ambiguous_adversarial": {
+      "questions": 5,
+      "supported_questions": 5,
+      "unsupported_questions": 0,
+      "hit_rate_at_k": 1,
+      "evidence_recall": 1.0,
+      "mrr": 1.0,
+      "answer_keyword_coverage": 0.1,
+      "answer_abstention_rate": 0
+    },
+    "cross_policy_multi_document": {
+      "questions": 5,
+      "supported_questions": 5,
+      "unsupported_questions": 0,
+      "hit_rate_at_k": 1,
+      "evidence_recall": 1.0,
+      "mrr": 1.0,
+      "answer_keyword_coverage": 0.5666666666666667,
+      "answer_abstention_rate": 0
+    },
+    "direct_supported": {
+      "questions": 12,
+      "supported_questions": 12,
+      "unsupported_questions": 0,
+      "hit_rate_at_k": 1,
+      "evidence_recall": 1.0,
+      "mrr": 0.9583333333333334,
+      "answer_keyword_coverage": 0.9583333333333334,
+      "answer_abstention_rate": 0
+    },
+    "paraphrased_supported": {
+      "questions": 10,
+      "supported_questions": 10,
+      "unsupported_questions": 0,
+      "hit_rate_at_k": 1,
+      "evidence_recall": 1.0,
+      "mrr": 0.8833333333333333,
+      "answer_keyword_coverage": 1.0,
+      "answer_abstention_rate": 0
+    },
+    "unsupported": {
+      "questions": 8,
+      "supported_questions": 0,
+      "unsupported_questions": 8,
+      "unsupported_rejection_accuracy": 0.875,
+      "answer_abstention_accuracy": 1
+    }
+  }
+}

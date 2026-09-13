@@ -1,0 +1,1437 @@
+[
+  {
+    "id": "DS001",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "What is the standard full-time working week in hours?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 3,
+    "top_similarity": 0.7139474451541901,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "chunk_id": 5,
+        "similarity": 0.7139
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.4784
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 7,
+        "similarity": 0.4489
+      }
+    ],
+    "answer": "37.5 hours.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS002",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How many days per week may eligible employees work remotely?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.7018676698207855,
+    "sources": [
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.7019
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "chunk_id": 5,
+        "similarity": 0.6655
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.4951
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "chunk_id": 6,
+        "similarity": 0.484
+      }
+    ],
+    "answer": "3 days per week.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 0.5,
+    "relevant_rank": 2,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS003",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "How many days of paid annual leave do full-time employees receive?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.7468365132808685,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 7,
+        "similarity": 0.7468
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.7008
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 33,
+        "similarity": 0.528
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 8,
+        "similarity": 0.5103
+      }
+    ],
+    "answer": "25 days.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS004",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How many unused annual-leave days may normally be carried into the next holiday year?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.6446271538734436,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 8,
+        "similarity": 0.6446
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.595
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 7,
+        "similarity": 0.5811
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.4887
+      }
+    ],
+    "answer": "Up to five.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS005",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "By what time must an employee normally report sickness on the first day of absence?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.7271753549575806,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "chunk_id": 10,
+        "similarity": 0.7272
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "chunk_id": 11,
+        "similarity": 0.7208
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 33,
+        "similarity": 0.592
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.4468
+      }
+    ],
+    "answer": "9:00 a.m.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS006",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "For how many calendar days may an employee self-certify sickness?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.7546504437923431,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "chunk_id": 11,
+        "similarity": 0.7547
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "chunk_id": 10,
+        "similarity": 0.6093
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 33,
+        "similarity": 0.5536
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.5247
+      }
+    ],
+    "answer": "seven.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS007",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "How often must corporate passwords be changed?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 2,
+    "top_similarity": 0.7904859483242035,
+    "sources": [
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.7905
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 13,
+        "similarity": 0.6202
+      }
+    ],
+    "answer": "every 90 days.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS008",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How quickly must a lost or stolen company device be reported?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.7621768265962601,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 14,
+        "similarity": 0.7622
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 17,
+        "similarity": 0.5352
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "chunk_id": 28,
+        "similarity": 0.4837
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.454
+      }
+    ],
+    "answer": "Within two hours.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS009",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How quickly must a suspected personal-data incident be reported?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 3,
+    "top_similarity": 0.7045369446277618,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 17,
+        "similarity": 0.7045
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 16,
+        "similarity": 0.4365
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 14,
+        "similarity": 0.4328
+      }
+    ],
+    "answer": "within one hour of discovery.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS010",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "What is the standard hotel cap per night in London?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 1,
+    "top_similarity": 0.5983771085739136,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 8,
+        "chunk_id": 19,
+        "similarity": 0.5984
+      }
+    ],
+    "answer": "\u00a3150 per night.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS011",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "What is the annual professional-development budget for each permanent employee?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 1,
+    "top_similarity": 0.6746796071529388,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "chunk_id": 22,
+        "similarity": 0.6747
+      }
+    ],
+    "answer": "\u00a3750.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "DS012",
+    "category": "direct_supported",
+    "split": "tune",
+    "question": "How much may eligible remote workers claim for approved home-working equipment, and how often?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 2,
+    "top_similarity": 0.7086912393569946,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "chunk_id": 27,
+        "similarity": 0.7087
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.4593
+      }
+    ],
+    "answer": "\u00a3250.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.5,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS001",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "Which teams must approve working from another country before an employee travels?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 2,
+    "top_similarity": 0.6732046604156494,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "chunk_id": 6,
+        "similarity": 0.6732
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 34,
+        "similarity": 0.4618
+      }
+    ],
+    "answer": "People & Culture, Tax and Information Security.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS002",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "During which hours are employees normally expected to be available for core collaboration?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 1,
+    "top_similarity": 0.6543970108032227,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "chunk_id": 5,
+        "similarity": 0.6544
+      }
+    ],
+    "answer": "10:00 to 15:00 local time.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS003",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "If someone plans to take a full working week off, how far in advance should they normally request it?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.5577486157417297,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 8,
+        "similarity": 0.5577
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.5293
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.5273
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 7,
+        "similarity": 0.5197
+      }
+    ],
+    "answer": "10 working days in advance.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS004",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "By what date should carried-over annual leave normally be used?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.6744992136955261,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 8,
+        "similarity": 0.6745
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 7,
+        "similarity": 0.5558
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.5051
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.4786
+      }
+    ],
+    "answer": "31 March.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS005",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "At what point does an employee normally need a fit note rather than relying on self-certification?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 3,
+    "top_similarity": 0.47333312034606934,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "chunk_id": 23,
+        "similarity": 0.4733
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 31,
+        "similarity": 0.4732
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "chunk_id": 11,
+        "similarity": 0.4553
+      }
+    ],
+    "answer": "For an absence lasting more than seven calendar days.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "relevant_rank": 3,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS006",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "What extra authentication control is compulsory when accessing company systems remotely?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.659295916557312,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 13,
+        "similarity": 0.6593
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.535
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "chunk_id": 6,
+        "similarity": 0.4926
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 15,
+        "similarity": 0.44
+      }
+    ],
+    "answer": "Multi-factor authentication.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS007",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "Where must company or customer data not be stored outside approved company systems?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 2,
+    "top_similarity": 0.5036453008651733,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 16,
+        "similarity": 0.5036
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 17,
+        "similarity": 0.5
+      }
+    ],
+    "answer": "personal email, personal cloud storage or consumer file-sharing services.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS008",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "How long after a transaction does an employee normally have to submit a valid business expense?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.6018050312995911,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 8,
+        "chunk_id": 19,
+        "similarity": 0.6018
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.4878
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 8,
+        "similarity": 0.4714
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 33,
+        "similarity": 0.4457
+      }
+    ],
+    "answer": "30 days.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS009",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "How frequently should employees and line managers have a documented performance and development check-in?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.550996720790863,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "chunk_id": 22,
+        "similarity": 0.551
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 30,
+        "similarity": 0.4785
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 2,
+        "chunk_id": 3,
+        "similarity": 0.4686
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "chunk_id": 23,
+        "similarity": 0.4601
+      }
+    ],
+    "answer": "Once per quarter.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "PS010",
+    "category": "paraphrased_supported",
+    "split": "tune",
+    "question": "If raising a concern with a line manager would be inappropriate, what confidential route can an employee use instead?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.5976355075836182,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 2,
+        "chunk_id": 3,
+        "similarity": 0.5976
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 10,
+        "chunk_id": 25,
+        "similarity": 0.5671
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 30,
+        "similarity": 0.5569
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 10,
+        "chunk_id": 24,
+        "similarity": 0.4716
+      }
+    ],
+    "answer": "Speak Up.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 0.5,
+    "relevant_rank": 2,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "CP001",
+    "category": "cross_policy_multi_document",
+    "split": "tune",
+    "question": "Do EmployeeHandbook.pdf and ITSecurityPolicy.txt agree on how often corporate passwords must be changed, and what interval do they state?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "retrieved_count": 4,
+    "top_similarity": 0.7271877527236938,
+    "sources": [
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.7272
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 13,
+        "similarity": 0.6727
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 16,
+        "similarity": 0.4597
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 31,
+        "similarity": 0.4423
+      }
+    ],
+    "answer": "Yes.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "CP002",
+    "category": "cross_policy_multi_document",
+    "split": "test",
+    "question": "Across EmployeeHandbook.pdf and ITSecurityPolicy.txt, what authentication control is required for remote access?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "retrieved_count": 4,
+    "top_similarity": 0.6082037687301636,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 13,
+        "similarity": 0.6082
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 16,
+        "similarity": 0.4604
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.4587
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 31,
+        "similarity": 0.4457
+      }
+    ],
+    "answer": "Multi-factor authentication.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "CP003",
+    "category": "cross_policy_multi_document",
+    "split": "tune",
+    "question": "What deadline for reporting a lost or stolen company device is stated in both EmployeeHandbook.pdf and ITSecurityPolicy.txt?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "retrieved_count": 4,
+    "top_similarity": 0.6431659162044525,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 14,
+        "similarity": 0.6432
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 17,
+        "similarity": 0.4883
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.4823
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "chunk_id": 28,
+        "similarity": 0.4775
+      }
+    ],
+    "answer": "two hours.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 1.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "CP004",
+    "category": "cross_policy_multi_document",
+    "split": "tune",
+    "question": "Compare the reporting deadlines for a suspected personal-data incident and a lost or stolen company device.",
+    "supported": true,
+    "evidence_requirement": "all",
+    "retrieved_count": 4,
+    "top_similarity": 0.6218162775039673,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 17,
+        "similarity": 0.6218
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 14,
+        "similarity": 0.5876
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 16,
+        "similarity": 0.4688
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "chunk_id": 28,
+        "similarity": 0.425
+      }
+    ],
+    "answer": "[Source 1: EmployeeHandbook.pdf, page 7]",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.5,
+    "answer_abstained": false
+  },
+  {
+    "id": "CP005",
+    "category": "cross_policy_multi_document",
+    "split": "tune",
+    "question": "Using both EmployeeHandbook.pdf and ITSecurityPolicy.txt, what reporting deadline applies to a lost company laptop and what authentication control do the documents require for remote access?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "retrieved_count": 4,
+    "top_similarity": 0.5387485921382904,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 14,
+        "similarity": 0.5387
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 13,
+        "similarity": 0.5271
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.5263
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "chunk_id": 27,
+        "similarity": 0.4457
+      }
+    ],
+    "answer": "Two hours.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.3333333333333333,
+    "answer_abstained": false
+  },
+  {
+    "id": "UN001",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "What is the Chief Executive Officer's salary?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN002",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "What is the company's current share price?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN003",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "When does the company's office lease expire?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN004",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "What was the company's revenue in the last financial year?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN005",
+    "category": "unsupported",
+    "split": "test",
+    "question": "What percentage of salary does the company contribute to each employee's pension?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN006",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "How many weeks of enhanced maternity pay does the company provide?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN007",
+    "category": "unsupported",
+    "split": "tune",
+    "question": "What monthly company-car allowance is available to employees?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": true
+  },
+  {
+    "id": "UN008",
+    "category": "unsupported",
+    "split": "test",
+    "question": "How many employees currently work for Example Company?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 2,
+    "top_similarity": 0.4494953155517578,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 31,
+        "similarity": 0.4495
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 2,
+        "chunk_id": 2,
+        "similarity": 0.4337
+      }
+    ],
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": false,
+    "answer_abstained": true
+  },
+  {
+    "id": "AA001",
+    "category": "ambiguous_adversarial",
+    "split": "tune",
+    "question": "The handbook says every employee can work from home three days per week without approval. Is that correct?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.5577289760112762,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "chunk_id": 5,
+        "similarity": 0.5577
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.5573
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 31,
+        "similarity": 0.5142
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.5088
+      }
+    ],
+    "answer": "Yes, it is.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "AA002",
+    "category": "ambiguous_adversarial",
+    "split": "tune",
+    "question": "An employee has seven unused annual-leave days. Can all seven normally be carried into the next holiday year?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.6806188821792603,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 9,
+        "similarity": 0.6806
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 8,
+        "similarity": 0.5699
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 7,
+        "similarity": 0.5252
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "chunk_id": 11,
+        "similarity": 0.466
+      }
+    ],
+    "answer": "Yes.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "AA003",
+    "category": "ambiguous_adversarial",
+    "split": "test",
+    "question": "If a stolen company laptop has already been remotely wiped, can the employee wait until the next day to report it?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.6203281283378601,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 14,
+        "similarity": 0.6203
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.5087
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "chunk_id": 28,
+        "similarity": 0.4685
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 17,
+        "similarity": 0.46
+      }
+    ],
+    "answer": "Yes.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.0,
+    "answer_abstained": false
+  },
+  {
+    "id": "AA004",
+    "category": "ambiguous_adversarial",
+    "split": "tune",
+    "question": "A London hotel costs \u00a3175 per night for an authorised business trip. Can the employee claim it automatically without prior approval?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 1,
+    "top_similarity": 0.687108039855957,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 8,
+        "chunk_id": 19,
+        "similarity": 0.6871
+      }
+    ],
+    "answer": "The standard hotel cap is \u00a3150 per night in London and \u00a3110 per night elsewhere in the UK.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.5,
+    "answer_abstained": false
+  },
+  {
+    "id": "AA005",
+    "category": "ambiguous_adversarial",
+    "split": "tune",
+    "question": "If a suspected personal-data incident appears minor and already contained, may the employee investigate it first and report it later?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.6336387991905212,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 17,
+        "similarity": 0.6336
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 16,
+        "similarity": 0.5145
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 18,
+        "similarity": 0.4934
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 14,
+        "similarity": 0.4258
+      }
+    ],
+    "answer": "Prompt reporting is required even where the employee believes the incident is minor or has already been contained.",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": 0.0,
+    "answer_abstained": false
+  }
+]

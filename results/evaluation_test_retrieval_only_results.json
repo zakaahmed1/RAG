@@ -1,0 +1,351 @@
+[
+  {
+    "id": "DS003",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "How many days of paid annual leave do full-time employees receive?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.7468365132808685,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 7,
+        "similarity": 0.7468
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 32,
+        "similarity": 0.7008
+      },
+      {
+        "source": "ExampleCompanyPolicy.txt",
+        "page": null,
+        "chunk_id": 33,
+        "similarity": 0.528
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 4,
+        "chunk_id": 8,
+        "similarity": 0.5103
+      }
+    ],
+    "answer": "",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": null,
+    "answer_abstained": null
+  },
+  {
+    "id": "DS007",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "How often must corporate passwords be changed?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 2,
+    "top_similarity": 0.7904859483242035,
+    "sources": [
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.7905
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 13,
+        "similarity": 0.6202
+      }
+    ],
+    "answer": "",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": null,
+    "answer_abstained": null
+  },
+  {
+    "id": "DS011",
+    "category": "direct_supported",
+    "split": "test",
+    "question": "What is the annual professional-development budget for each permanent employee?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 1,
+    "top_similarity": 0.6746796071529388,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "chunk_id": 22,
+        "similarity": 0.6747
+      }
+    ],
+    "answer": "",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": null,
+    "answer_abstained": null
+  },
+  {
+    "id": "PS002",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "During which hours are employees normally expected to be available for core collaboration?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 1,
+    "top_similarity": 0.6543970108032227,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 3,
+        "chunk_id": 5,
+        "similarity": 0.6544
+      }
+    ],
+    "answer": "",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": null,
+    "answer_abstained": null
+  },
+  {
+    "id": "PS005",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "At what point does an employee normally need a fit note rather than relying on self-certification?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 3,
+    "top_similarity": 0.47333312034606934,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "chunk_id": 23,
+        "similarity": 0.4733
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 31,
+        "similarity": 0.4732
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 5,
+        "chunk_id": 11,
+        "similarity": 0.4553
+      }
+    ],
+    "answer": "",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "relevant_rank": 3,
+    "retrieval_rejected": false,
+    "keyword_coverage": null,
+    "answer_abstained": null
+  },
+  {
+    "id": "PS009",
+    "category": "paraphrased_supported",
+    "split": "test",
+    "question": "How frequently should employees and line managers have a documented performance and development check-in?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.550996720790863,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "chunk_id": 22,
+        "similarity": 0.551
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 30,
+        "similarity": 0.4785
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 2,
+        "chunk_id": 3,
+        "similarity": 0.4686
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 9,
+        "chunk_id": 23,
+        "similarity": 0.4601
+      }
+    ],
+    "answer": "",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": null,
+    "answer_abstained": null
+  },
+  {
+    "id": "CP002",
+    "category": "cross_policy_multi_document",
+    "split": "test",
+    "question": "Across EmployeeHandbook.pdf and ITSecurityPolicy.txt, what authentication control is required for remote access?",
+    "supported": true,
+    "evidence_requirement": "all",
+    "retrieved_count": 4,
+    "top_similarity": 0.6082037687301636,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 13,
+        "similarity": 0.6082
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 16,
+        "similarity": 0.4604
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.4587
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 31,
+        "similarity": 0.4457
+      }
+    ],
+    "answer": "",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": null,
+    "answer_abstained": null
+  },
+  {
+    "id": "UN005",
+    "category": "unsupported",
+    "split": "test",
+    "question": "What percentage of salary does the company contribute to each employee's pension?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 0,
+    "top_similarity": null,
+    "sources": [],
+    "answer": "",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": true,
+    "answer_abstained": null
+  },
+  {
+    "id": "UN008",
+    "category": "unsupported",
+    "split": "test",
+    "question": "How many employees currently work for Example Company?",
+    "supported": false,
+    "evidence_requirement": "none",
+    "retrieved_count": 2,
+    "top_similarity": 0.4494953155517578,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 12,
+        "chunk_id": 31,
+        "similarity": 0.4495
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 2,
+        "chunk_id": 2,
+        "similarity": 0.4337
+      }
+    ],
+    "answer": "",
+    "hit_at_k": null,
+    "evidence_recall": null,
+    "reciprocal_rank": null,
+    "relevant_rank": null,
+    "keyword_coverage": null,
+    "retrieval_rejected": false,
+    "answer_abstained": null
+  },
+  {
+    "id": "AA003",
+    "category": "ambiguous_adversarial",
+    "split": "test",
+    "question": "If a stolen company laptop has already been remotely wiped, can the employee wait until the next day to report it?",
+    "supported": true,
+    "evidence_requirement": "any",
+    "retrieved_count": 4,
+    "top_similarity": 0.6203281283378601,
+    "sources": [
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 6,
+        "chunk_id": 14,
+        "similarity": 0.6203
+      },
+      {
+        "source": "ITSecurityPolicy.txt",
+        "page": null,
+        "chunk_id": 36,
+        "similarity": 0.5087
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 11,
+        "chunk_id": 28,
+        "similarity": 0.4685
+      },
+      {
+        "source": "EmployeeHandbook.pdf",
+        "page": 7,
+        "chunk_id": 17,
+        "similarity": 0.46
+      }
+    ],
+    "answer": "",
+    "hit_at_k": 1,
+    "evidence_recall": 1.0,
+    "reciprocal_rank": 1.0,
+    "relevant_rank": 1,
+    "retrieval_rejected": false,
+    "keyword_coverage": null,
+    "answer_abstained": null
+  }
+]

@@ -14,7 +14,7 @@ from app.config import (
 @dataclass(frozen=True)
 class RetrievedChunk:
     """
-    Represents a retrieved document chunk together with
+    A retrieved document chunk together with
     its vector-search scoring information.
     """
 
@@ -27,14 +27,6 @@ def distance_to_similarity(distance: float) -> float:
     """
     Convert squared L2 distance between normalised vectors
     into cosine similarity.
-
-    For unit-normalised vectors:
-
-        squared_l2 = 2 - 2 * cosine_similarity
-
-    therefore:
-
-        cosine_similarity = 1 - squared_l2 / 2
     """
 
     similarity = 1.0 - (float(distance) / 2.0)
@@ -47,7 +39,7 @@ def distance_to_similarity(distance: float) -> float:
 
 def document_key(document: Document):
     """
-    Create a stable key for identifying duplicate chunks.
+    Stable identifier for duplicate detection.
     """
 
     metadata = document.metadata
@@ -63,15 +55,17 @@ def document_key(document: Document):
 def get_similarity_candidates(
     vector_store,
     query: str,
+    fetch_k: int = FETCH_K,
+    min_similarity: float = MIN_SIMILARITY,
 ):
     """
-    Retrieve candidate chunks using semantic similarity,
-    calculate cosine similarity and remove duplicates.
+    Retrieve semantic-search candidates, calculate cosine
+    similarity, apply thresholding and remove duplicates.
     """
 
     raw_results = vector_store.similarity_search_with_score(
         query,
-        k=FETCH_K,
+        k=fetch_k,
     )
 
     results = []
@@ -83,7 +77,7 @@ def get_similarity_candidates(
             distance
         )
 
-        if similarity < MIN_SIMILARITY:
+        if similarity < min_similarity:
             continue
 
         key = document_key(document)
@@ -107,34 +101,44 @@ def get_similarity_candidates(
 def retrieve_with_similarity(
     vector_store,
     query: str,
+    top_k: int = TOP_K,
+    fetch_k: int = FETCH_K,
+    min_similarity: float = MIN_SIMILARITY,
 ):
     """
     Return the highest-similarity chunks.
     """
 
     candidates = get_similarity_candidates(
-        vector_store,
-        query,
+        vector_store=vector_store,
+        query=query,
+        fetch_k=max(fetch_k, top_k),
+        min_similarity=min_similarity,
     )
 
-    return candidates[:TOP_K]
+    return candidates[:top_k]
 
 
 def retrieve_with_mmr(
     vector_store,
     query: str,
+    top_k: int = TOP_K,
+    fetch_k: int = FETCH_K,
+    min_similarity: float = MIN_SIMILARITY,
+    mmr_lambda: float = MMR_LAMBDA_MULT,
 ):
     """
-    Use Maximum Marginal Relevance to select a mixture
-    of relevant and non-redundant chunks.
-
-    Similarity scores are taken from the original
-    similarity-search candidate set.
+    Use Maximum Marginal Relevance to balance relevance
+    and diversity.
     """
 
+    fetch_k = max(fetch_k, top_k)
+
     candidates = get_similarity_candidates(
-        vector_store,
-        query,
+        vector_store=vector_store,
+        query=query,
+        fetch_k=fetch_k,
+        min_similarity=min_similarity,
     )
 
     candidate_map = {
@@ -142,13 +146,11 @@ def retrieve_with_mmr(
         for chunk in candidates
     }
 
-    mmr_documents = (
-        vector_store.max_marginal_relevance_search(
-            query,
-            k=TOP_K,
-            fetch_k=FETCH_K,
-            lambda_mult=MMR_LAMBDA_MULT,
-        )
+    mmr_documents = vector_store.max_marginal_relevance_search(
+        query,
+        k=top_k,
+        fetch_k=fetch_k,
+        lambda_mult=mmr_lambda,
     )
 
     results = []
@@ -161,13 +163,13 @@ def retrieve_with_mmr(
         if key in seen:
             continue
 
-        seen.add(key)
-
         candidate = candidate_map.get(key)
 
+        # The MMR result may have been below our threshold.
         if candidate is None:
             continue
 
+        seen.add(key)
         results.append(candidate)
 
     return results
@@ -176,39 +178,47 @@ def retrieve_with_mmr(
 def retrieve_documents(
     vector_store,
     query: str,
+    *,
+    mode: str = RETRIEVAL_MODE,
+    top_k: int = TOP_K,
+    fetch_k: int = FETCH_K,
+    min_similarity: float = MIN_SIMILARITY,
+    mmr_lambda: float = MMR_LAMBDA_MULT,
 ):
     """
-    Main retrieval entry point.
+    Main configurable retrieval entry point.
     """
 
     if not query.strip():
-        raise ValueError(
-            "Query cannot be empty."
-        )
+        raise ValueError("Query cannot be empty.")
 
-    if RETRIEVAL_MODE == "similarity":
+    if mode == "similarity":
         return retrieve_with_similarity(
-            vector_store,
-            query,
+            vector_store=vector_store,
+            query=query,
+            top_k=top_k,
+            fetch_k=fetch_k,
+            min_similarity=min_similarity,
         )
 
-    if RETRIEVAL_MODE == "mmr":
+    if mode == "mmr":
         return retrieve_with_mmr(
-            vector_store,
-            query,
+            vector_store=vector_store,
+            query=query,
+            top_k=top_k,
+            fetch_k=fetch_k,
+            min_similarity=min_similarity,
+            mmr_lambda=mmr_lambda,
         )
 
     raise ValueError(
-        f"Unsupported retrieval mode: {RETRIEVAL_MODE}"
+        f"Unsupported retrieval mode: {mode}"
     )
 
 
 def format_source_reference(
     chunk: RetrievedChunk,
 ) -> str:
-    """
-    Create a human-readable source citation.
-    """
 
     metadata = chunk.document.metadata
 
@@ -217,15 +227,9 @@ def format_source_reference(
         "Unknown source",
     )
 
-    page_number = metadata.get(
-        "page_number"
-    )
+    page_number = metadata.get("page_number")
 
     if page_number is not None:
-        source = (
-            f"{file_name}, page {page_number}"
-        )
-    else:
-        source = file_name
+        return f"{file_name}, page {page_number}"
 
-    return source
+    return file_name
