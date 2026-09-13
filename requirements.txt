@@ -13,3 +13,6 @@ fastapi
 uvicorn[standard]
 streamlit
 requests
+pytest
+pytest-cov
+httpx
