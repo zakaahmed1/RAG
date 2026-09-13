@@ -1,6 +1,7 @@
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 from app.config import (
+    ABSTENTION_TEXT,
     GENERATOR_MODEL_NAME,
     MAX_NEW_TOKENS,
 )
@@ -78,9 +79,9 @@ Do not use outside knowledge.
 Do not invent facts that are not present in the context.
 
 If the context does not contain enough information to answer
-the question, respond:
+the question, respond exactly:
 
-"I could not find sufficient information in the supplied documents."
+"{ABSTENTION_TEXT}"
 
 Context:
 {context}

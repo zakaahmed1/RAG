@@ -1,11 +1,6 @@
 import re
 
-
-ABSTENTION_TEXT = (
-    "I could not find sufficient information "
-    "in the supplied documents."
-)
-
+from app.config import ABSTENTION_TEXT
 
 def normalize_text(text: str) -> str:
     """

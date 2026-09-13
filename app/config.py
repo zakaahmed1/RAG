@@ -62,3 +62,12 @@ MIN_SIMILARITY = 0.425
 GENERATOR_MODEL_NAME = "google/flan-t5-base"
 
 MAX_NEW_TOKENS = 150
+
+# ---------------------------------------------------------
+# Grounding / abstention
+# ---------------------------------------------------------
+
+ABSTENTION_TEXT = (
+    "I could not find sufficient information "
+    "in the supplied documents."
+)
