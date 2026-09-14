@@ -1,7 +1,5 @@
 from pathlib import Path
 
-from cloup import file_path
-from cloup import file_path
 from langchain_community.document_loaders import (
     Docx2txtLoader,
     PyPDFLoader,
