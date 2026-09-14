@@ -63,6 +63,13 @@ MIN_SIMILARITY = 0.425
 
 GENERATOR_MODEL_NAME = "google/flan-t5-base"
 
+# Immutable Hugging Face repository revision.
+# Pinning prevents upstream model changes from being
+# downloaded silently and mitigates supply-chain risk.
+GENERATOR_MODEL_REVISION = (
+    "7bcac572ce56db69c1ea7c8af255c5d7c9672fc2"
+)
+
 MAX_NEW_TOKENS = 150
 
 # ---------------------------------------------------------

@@ -3,21 +3,26 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from app.config import (
     ABSTENTION_TEXT,
     GENERATOR_MODEL_NAME,
+    GENERATOR_MODEL_REVISION,
     MAX_NEW_TOKENS,
 )
 
 
 def create_generator():
     """
-    Load the tokenizer and sequence-to-sequence language model.
+    Load the tokenizer and sequence-to-sequence language model
+    from an immutable Hugging Face revision.
     """
 
     tokenizer = AutoTokenizer.from_pretrained(
-        GENERATOR_MODEL_NAME
+        GENERATOR_MODEL_NAME,
+        revision=GENERATOR_MODEL_REVISION,
     )
 
     model = AutoModelForSeq2SeqLM.from_pretrained(
-        GENERATOR_MODEL_NAME
+        GENERATOR_MODEL_NAME,
+        revision=GENERATOR_MODEL_REVISION,
+        use_safetensors=True,
     )
 
     return tokenizer, model
