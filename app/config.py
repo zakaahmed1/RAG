@@ -1,3 +1,5 @@
+import os
+
 from pathlib import Path
 
 
@@ -70,4 +72,13 @@ MAX_NEW_TOKENS = 150
 ABSTENTION_TEXT = (
     "I could not find sufficient information "
     "in the supplied documents."
+)
+
+# ---------------------------------------------------------
+# Observability
+# ---------------------------------------------------------
+
+LOG_LEVEL = os.getenv(
+    "LOG_LEVEL",
+    "INFO",
 )

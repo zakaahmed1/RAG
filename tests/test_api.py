@@ -1,5 +1,7 @@
 from fastapi.testclient import TestClient
 
+from uuid import UUID
+
 import app.api.app as api_module
 
 
@@ -171,3 +173,30 @@ def test_missing_question_returns_422(
         )
 
         assert response.status_code == 422
+
+
+def test_request_id_header(
+    monkeypatch,
+):
+
+    with create_client(
+        monkeypatch
+    ) as client:
+
+        response = client.get(
+            "/health"
+        )
+
+        assert response.status_code == 200
+
+        request_id = (
+            response.headers[
+                "X-Request-ID"
+            ]
+        )
+
+        # Raises ValueError if it is not
+        # a valid UUID.
+        UUID(
+            request_id
+        )
