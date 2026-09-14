@@ -13,6 +13,24 @@ API_BASE_URL = os.getenv(
     "http://127.0.0.1:8000",
 )
 
+API_KEY = os.getenv(
+    "RAG_API_KEY",
+    "",
+).strip()
+
+
+def api_headers():
+    """
+    Return authentication headers when configured.
+    """
+
+    if not API_KEY:
+        return {}
+
+    return {
+        "X-API-Key": API_KEY
+    }
+
 REQUEST_TIMEOUT_SECONDS = 120
 
 
@@ -60,6 +78,7 @@ def get_status():
 
         response = requests.get(
             f"{API_BASE_URL}/status",
+            headers=api_headers(),
             timeout=5,
         )
 
@@ -81,6 +100,7 @@ def query_rag(question: str):
         json={
             "question": question
         },
+        headers=api_headers(),
         timeout=REQUEST_TIMEOUT_SECONDS,
     )
 
@@ -212,6 +232,12 @@ st.write(
 st.caption(
     "Sources and semantic similarity scores are shown "
     "for every retrieved answer."
+)
+
+st.caption(
+    "Generated answers should be verified against "
+    "the cited source material before being used "
+    "for high-impact decisions."
 )
 
 st.divider()
@@ -411,6 +437,12 @@ if question:
                     if exc.response
                     else None
                 )
+
+                if status_code == 401:
+
+                    st.error(
+                        "API authentication failed. "
+                    )
 
                 if status_code == 422:
 

@@ -24,6 +24,14 @@ services:
       - ./storage/faiss_index:/app/storage/faiss_index:ro
       - huggingface_cache:/root/.cache/huggingface
 
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      RAG_API_KEY: ${RAG_API_KEY:-}
+      TRUSTED_HOSTS: ${TRUSTED_HOSTS:-localhost,127.0.0.1,api,testserver}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-}
+      ENABLE_DOCS: ${ENABLE_DOCS:-true}
+
     healthcheck:
       test:
         [
@@ -55,6 +63,7 @@ services:
 
     environment:
       RAG_API_BASE_URL: http://api:8000
+      RAG_API_KEY: ${RAG_API_KEY:-}
 
     ports:
       - "8501:8501"

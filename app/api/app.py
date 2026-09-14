@@ -2,12 +2,33 @@ import logging
 
 from contextlib import asynccontextmanager
 from time import perf_counter
+from urllib import response
 from uuid import uuid4
 
 from fastapi import (
+    Depends,
     FastAPI,
     HTTPException,
     Request,
+)
+
+from fastapi.middleware.cors import (
+    CORSMiddleware,
+)
+
+from starlette.middleware.trustedhost import (
+    TrustedHostMiddleware,
+)
+
+from app.config import (
+    ALLOWED_ORIGINS,
+    ENABLE_DOCS,
+    TRUSTED_HOSTS,
+)
+
+from app.security.controls import (
+    require_api_key,
+    validate_security_configuration,
 )
 
 from app.api.schemas import (
@@ -60,6 +81,8 @@ async def lifespan(
         "application_starting",
     )
 
+    validate_security_configuration()
+
     rag_service = RAGService()
 
     rag_service.start()
@@ -100,8 +123,48 @@ app = FastAPI(
         "API for querying a grounded "
         "Retrieval-Augmented Generation system."
     ),
-    version="0.5.0",
+    version="0.11.0",
     lifespan=lifespan,
+    docs_url=(
+        "/docs"
+        if ENABLE_DOCS
+        else None
+    ),
+    redoc_url=(
+        "/redoc"
+        if ENABLE_DOCS
+        else None
+    ),
+    openapi_url=(
+        "/openapi.json"
+        if ENABLE_DOCS
+        else None
+    ),
+)
+
+app = FastAPI(
+    title="RAG Knowledge Assistant API",
+    description=(
+        "API for querying a grounded "
+        "Retrieval-Augmented Generation system."
+    ),
+    version="0.11.0",
+    lifespan=lifespan,
+    docs_url=(
+        "/docs"
+        if ENABLE_DOCS
+        else None
+    ),
+    redoc_url=(
+        "/redoc"
+        if ENABLE_DOCS
+        else None
+    ),
+    openapi_url=(
+        "/openapi.json"
+        if ENABLE_DOCS
+        else None
+    ),
 )
 
 
@@ -148,6 +211,22 @@ async def request_observability(
         response.headers[
             "X-Request-ID"
         ] = request_id
+
+        response.headers[
+            "X-Content-Type-Options"
+        ] = "nosniff"
+
+        response.headers[
+            "X-Frame-Options"
+        ] = "DENY"
+
+        response.headers[
+            "Referrer-Policy"
+        ] = "no-referrer"
+
+        response.headers[
+            "Cache-Control"
+        ] = "no-store"
 
         log_event(
             logger,
@@ -219,6 +298,11 @@ def health():
 @app.get(
     "/status",
     response_model=StatusResponse,
+    dependencies=[
+        Depends(
+            require_api_key
+        )
+    ],
 )
 def status(
     request: Request,
@@ -241,6 +325,11 @@ def status(
 @app.post(
     "/query",
     response_model=QueryResponse,
+    dependencies=[
+        Depends(
+            require_api_key
+        )
+    ],
 )
 def query(
     payload: QueryRequest,

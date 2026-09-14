@@ -82,3 +82,66 @@ LOG_LEVEL = os.getenv(
     "LOG_LEVEL",
     "INFO",
 )
+
+# ---------------------------------------------------------
+# Security
+# ---------------------------------------------------------
+
+APP_ENV = os.getenv(
+    "APP_ENV",
+    "development",
+).lower()
+
+MAX_QUERY_LENGTH = 2000
+
+RAG_API_KEY = os.getenv(
+    "RAG_API_KEY",
+    "",
+).strip()
+
+
+def _csv_env(
+    name: str,
+    default: str = "",
+) -> list[str]:
+    return [
+        value.strip()
+        for value in os.getenv(
+            name,
+            default,
+        ).split(",")
+        if value.strip()
+    ]
+
+
+TRUSTED_HOSTS = _csv_env(
+    "TRUSTED_HOSTS",
+    (
+        "localhost,"
+        "127.0.0.1,"
+        "api,"
+        "testserver"
+    ),
+)
+
+ALLOWED_ORIGINS = _csv_env(
+    "ALLOWED_ORIGINS"
+)
+
+_default_docs = (
+    "false"
+    if APP_ENV == "production"
+    else "true"
+)
+
+ENABLE_DOCS = (
+    os.getenv(
+        "ENABLE_DOCS",
+        _default_docs,
+    ).lower()
+    in {
+        "1",
+        "true",
+        "yes",
+    }
+)

@@ -1,6 +1,16 @@
+import unicodedata
+
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import (
+    BaseModel,
+    Field,
+    field_validator,
+)
+
+from app.config import (
+    MAX_QUERY_LENGTH,
+)
 
 
 class QueryRequest(BaseModel):
@@ -11,12 +21,61 @@ class QueryRequest(BaseModel):
     question: str = Field(
         ...,
         min_length=1,
-        max_length=2000,
+        max_length=MAX_QUERY_LENGTH,
         description=(
             "Question to answer using the indexed "
             "document knowledge base."
         ),
     )
+
+    @field_validator(
+        "question",
+        mode="before",
+    )
+    @classmethod
+    def normalize_question(
+        cls,
+        value,
+    ):
+        """
+        Normalise user input and reject unsupported
+        control characters.
+        """
+
+        if not isinstance(
+            value,
+            str,
+        ):
+            return value
+
+        value = unicodedata.normalize(
+            "NFC",
+            value,
+        ).strip()
+
+        for character in value:
+
+            category = (
+                unicodedata.category(
+                    character
+                )
+            )
+
+            if (
+                category == "Cc"
+                and character
+                not in {
+                    "\n",
+                    "\r",
+                    "\t",
+                }
+            ):
+                raise ValueError(
+                    "Question contains unsupported "
+                    "control characters."
+                )
+
+        return value
 
 
 class SourceResponse(BaseModel):
