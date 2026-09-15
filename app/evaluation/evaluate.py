@@ -1,11 +1,22 @@
 import argparse
 import csv
+import hashlib
 import json
+import platform
+import subprocess
+from datetime import datetime, timezone
 from pathlib import Path
 from statistics import mean
 
 from app.config import (
+    CHUNK_OVERLAP,
+    CHUNK_SIZE,
+    EMBEDDING_MODEL_NAME,
+    EMBEDDING_MODEL_REVISION,
     FETCH_K,
+    GENERATOR_MODEL_NAME,
+    GENERATOR_MODEL_REVISION,
+    MAX_NEW_TOKENS,
     MIN_SIMILARITY,
     MMR_LAMBDA_MULT,
     RETRIEVAL_MODE,
@@ -54,9 +65,86 @@ RESULTS_DIR = (
 )
 
 
+def file_sha256(path):
+    digest = hashlib.sha256()
+    with path.open("rb") as file:
+        for block in iter(lambda: file.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def git_value(*args):
+    try:
+        return subprocess.check_output(
+            ["git", *args], cwd=PROJECT_ROOT, text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
+def build_run_provenance(*, retrieval_only, split, mode=RETRIEVAL_MODE,
+                         top_k=TOP_K, fetch_k=FETCH_K,
+                         min_similarity=MIN_SIMILARITY,
+                         mmr_lambda=MMR_LAMBDA_MULT):
+    git_status = git_value(
+        "status", "--porcelain", "--", ".", ":(exclude)results"
+    )
+    return {
+        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        "git_commit_sha": git_value("rev-parse", "HEAD"),
+        "git_worktree_dirty": bool(git_status) if git_status is not None else None,
+        "dataset_path": str(DATASET_PATH.relative_to(PROJECT_ROOT)),
+        "dataset_sha256": file_sha256(DATASET_PATH),
+        "python_version": platform.python_version(),
+        "evaluation": {"retrieval_only": retrieval_only, "split": split},
+        "embedding": {"model": EMBEDDING_MODEL_NAME,
+                      "revision": EMBEDDING_MODEL_REVISION,
+                      "normalize_embeddings": True},
+        "chunking": {"chunk_size": CHUNK_SIZE,
+                     "chunk_overlap": CHUNK_OVERLAP},
+        "retrieval": {"mode": mode, "top_k": top_k, "fetch_k": fetch_k,
+                      "min_similarity": min_similarity,
+                      "mmr_lambda_mult": mmr_lambda},
+        "generation": {"model": GENERATOR_MODEL_NAME,
+                       "revision": GENERATOR_MODEL_REVISION,
+                       "max_new_tokens": MAX_NEW_TOKENS,
+                       "do_sample": False},
+    }
+
+
 # ---------------------------------------------------------
 # Dataset loading
 # ---------------------------------------------------------
+
+def validate_dataset(dataset):
+    question_ids = [item.get("id") for item in dataset]
+    if None in question_ids or len(question_ids) != len(set(question_ids)):
+        raise ValueError("Evaluation question IDs must be present and unique.")
+    for item in dataset:
+        question_id = item["id"]
+        required_evidence = item.get("required_evidence")
+        if not isinstance(required_evidence, list):
+            raise ValueError(
+                f"Question {question_id} must define required_evidence as a list."
+            )
+        if item.get("supported") and not required_evidence:
+            raise ValueError(f"Supported question {question_id} needs required evidence.")
+        if not item.get("supported") and required_evidence:
+            raise ValueError(f"Unsupported question {question_id} cannot require evidence.")
+        for group in required_evidence:
+            alternatives = group.get("alternatives")
+            if not isinstance(alternatives, list) or not alternatives:
+                raise ValueError(
+                    f"Question {question_id} has an evidence group without alternatives."
+                )
+            for alternative in alternatives:
+                if not alternative.get("source"):
+                    raise ValueError(f"Question {question_id} has evidence without a source.")
+                if not alternative.get("supporting_text"):
+                    raise ValueError(
+                        f"Question {question_id} has evidence without supporting_text."
+                    )
 
 def load_dataset(split=None):
     """
@@ -81,6 +169,8 @@ def load_dataset(split=None):
         encoding="utf-8",
     ) as file:
         dataset = json.load(file)
+
+    validate_dataset(dataset)
 
     if split is None:
         return dataset
@@ -245,12 +335,8 @@ def evaluate(
             "uncategorized",
         )
 
-        evidence_requirement = item.get(
-            "evidence_requirement"
-        )
-
-        expected_evidence = item.get(
-            "expected_evidence",
+        required_evidence = item.get(
+            "required_evidence",
             [],
         )
 
@@ -313,8 +399,7 @@ def evaluate(
             "split": item.get("split"),
             "question": question,
             "supported": supported,
-            "evidence_requirement":
-                evidence_requirement,
+            "required_evidence_groups": len(required_evidence),
             "retrieved_count": len(chunks),
             "top_similarity": top_similarity,
             "sources": sources,
@@ -327,48 +412,36 @@ def evaluate(
 
         if supported:
 
-            if evidence_requirement not in {
-                "any",
-                "all",
-            }:
-                raise ValueError(
-                    f"Question {question_id} is "
-                    f"supported but has invalid "
-                    f"evidence_requirement: "
-                    f"{evidence_requirement}"
-                )
-
-            if not expected_evidence:
+            if not required_evidence:
                 raise ValueError(
                     f"Question {question_id} is "
                     f"supported but contains no "
-                    f"expected_evidence."
+                    f"required_evidence groups."
                 )
 
             row["hit_at_k"] = hit_at_k(
                 chunks,
-                expected_evidence,
-                evidence_requirement,
+                required_evidence,
             )
 
             row["evidence_recall"] = (
                 evidence_recall(
                     chunks,
-                    expected_evidence,
+                    required_evidence,
                 )
             )
 
             row["reciprocal_rank"] = (
                 reciprocal_rank(
                     chunks,
-                    expected_evidence,
+                    required_evidence,
                 )
             )
 
             row["relevant_rank"] = (
                 relevant_rank(
                     chunks,
-                    expected_evidence,
+                    required_evidence,
                 )
             )
 
@@ -400,15 +473,10 @@ def evaluate(
 
         else:
 
-            if evidence_requirement not in {
-                None,
-                "none",
-            }:
+            if required_evidence:
                 raise ValueError(
                     f"Question {question_id} is "
-                    f"unsupported but has "
-                    f"evidence_requirement "
-                    f"'{evidence_requirement}'."
+                    f"unsupported but has required evidence."
                 )
 
             row["hit_at_k"] = None
@@ -445,6 +513,7 @@ def evaluate(
 def build_summary(
     results,
     retrieval_only,
+    provenance=None,
 ):
     """
     Calculate overall and category-level metrics.
@@ -701,6 +770,9 @@ def build_summary(
         category_metrics
     )
 
+    if provenance is not None:
+        summary["provenance"] = provenance
+
     return summary
 
 
@@ -895,7 +967,7 @@ def print_summary(summary):
 
     for key, value in summary.items():
 
-        if key == "categories":
+        if key in {"categories", "provenance"}:
             continue
 
         print_metric(
@@ -982,6 +1054,10 @@ def main():
         results,
         retrieval_only=(
             args.retrieval_only
+        ),
+        provenance=build_run_provenance(
+            retrieval_only=args.retrieval_only,
+            split=args.split,
         ),
     )
 

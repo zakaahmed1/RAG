@@ -553,6 +553,8 @@ Hit Rate@K
 
 Measures whether the required evidence appears somewhere in the retrieved top-K chunks.
 
+A result counts only when its source/page metadata and labelled supporting text all match.
+
 Evidence Recall@K
 
 Measures how much of the labelled evidence was retrieved.
@@ -582,6 +584,8 @@ Answer Keyword Coverage
 
 Uses labelled expected-answer terms to provide a lightweight deterministic measure of whether generated answers contain the expected information.
 
+Terms and phrases are matched on normalized token boundaries, so a label such as `1` does not incorrectly match `10`, `15` or `150`.
+
 Basic written-number normalisation is included so that values such as:
 
 one hour
@@ -598,28 +602,19 @@ Measures whether the generator correctly refuses to answer unsupported questions
 
 Multi-Evidence Evaluation
 
-Benchmark entries can use:
+Each supported benchmark entry defines `required_evidence` as independently required groups. Every group contains one or more `alternatives`.
 
-"evidence_requirement": "any"
+For example, one factual question may accept the same supporting statement from either the handbook or security policy. Those sources are alternatives inside one group. A cross-policy comparison instead uses two groups, because evidence from both documents is independently required.
 
-when any labelled source is sufficient.
+Each alternative records:
 
-For questions requiring multiple pieces of evidence:
+- source file
+- page, when applicable
+- exact supporting text that must occur in the retrieved chunk
 
-"evidence_requirement": "all"
+Unsupported questions use an empty `required_evidence` list.
 
-is used.
-
-For example, a question requiring evidence from both:
-
-EmployeeHandbook.pdf
-ITSecurityPolicy.txt
-
-only receives a successful Hit Rate result if evidence from both sources is retrieved.
-
-Unsupported questions use:
-
-"evidence_requirement": "none"
+Evaluation summaries also record run provenance, including the Git commit, dirty-worktree state, timestamp, dataset hash, Python version, model revisions, chunking settings, retrieval settings and generation parameters.
 
 Retrieval Parameter Tuning
 
