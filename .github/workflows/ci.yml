@@ -102,9 +102,23 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
+          load: true
           tags: rag-assistant:ci
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Verify non-root runtime identity
+        run: |
+          docker run --rm \
+            --entrypoint python \
+            rag-assistant:ci \
+            -c "import os; assert os.geteuid() == 10001"
+
+      - name: Run fast tests inside image
+        run: |
+          docker run --rm \
+            rag-assistant:ci \
+            python -m pytest -m "not integration" -q
 
   # -------------------------------------------------------
   # Security scanning

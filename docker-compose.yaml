@@ -7,6 +7,21 @@ services:
 
     image: rag-assistant:latest
 
+    user: "10001:10001"
+    init: true
+    read_only: true
+
+    security_opt:
+      - no-new-privileges:true
+
+    cap_drop:
+      - ALL
+
+    pids_limit: 512
+
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=256m
+
     command:
       - python
       - -m
@@ -22,7 +37,7 @@ services:
 
     volumes:
       - ./storage/faiss_index:/app/storage/faiss_index:ro
-      - huggingface_cache:/root/.cache/huggingface
+      - huggingface_cache:/home/appuser/.cache/huggingface
 
     environment:
       APP_ENV: ${APP_ENV:-development}
@@ -51,6 +66,21 @@ services:
   ui:
     image: rag-assistant:latest
 
+    user: "10001:10001"
+    init: true
+    read_only: true
+
+    security_opt:
+      - no-new-privileges:true
+
+    cap_drop:
+      - ALL
+
+    pids_limit: 256
+
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=128m
+
     command:
       - python
       - -m
@@ -62,8 +92,10 @@ services:
       - --server.headless=true
 
     environment:
+      HOME: /tmp
       RAG_API_BASE_URL: http://api:8000
       RAG_API_KEY: ${RAG_API_KEY:-}
+      STREAMLIT_BROWSER_GATHER_USAGE_STATS: "false"
 
     ports:
       - "8501:8501"
@@ -73,6 +105,44 @@ services:
         condition: service_healthy
 
     restart: unless-stopped
+
+
+  ingest:
+    profiles:
+      - tools
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: rag-assistant:latest
+
+    user: "10001:10001"
+    init: true
+    read_only: true
+
+    security_opt:
+      - no-new-privileges:true
+
+    cap_drop:
+      - ALL
+
+    pids_limit: 512
+
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=256m
+
+    command:
+      - python
+      - -m
+      - app.ingestion.ingest
+
+    volumes:
+      - ./storage/faiss_index:/app/storage/faiss_index
+      - huggingface_cache:/home/appuser/.cache/huggingface
+
+    environment:
+      TOKENIZERS_PARALLELISM: "false"
 
 
 volumes:

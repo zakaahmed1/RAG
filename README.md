@@ -1158,15 +1158,34 @@ The application is containerised using Docker and Docker Compose.
 
 The image uses:
 
-FROM python:3.13-slim
+python:3.13-slim pinned to an immutable multi-platform SHA-256 digest
 
 FastAPI and Streamlit use the same built application image but run with different commands.
+
+Container Hardening
+
+The image creates a dedicated `appuser` with UID/GID `10001` and switches to that identity before runtime. Docker Compose enforces the same identity and also applies:
+
+- read-only container root filesystems
+- writable, size-limited `/tmp` mounts
+- all Linux capabilities dropped
+- `no-new-privileges`
+- process-count limits
+- a read-only FAISS bind mount
+- a dedicated writable Hugging Face cache volume under the non-root home directory
+
+The base-image tag and digest must be reviewed and updated together when applying upstream Python image patches.
 
 Build
 
 Ensure the FAISS index has already been created:
 
 python -m app.ingestion.ingest
+
+Alternatively, build the image and create the index through the hardened profile-only ingestion service:
+
+docker compose build
+docker compose --profile tools run --rm ingest
 
 Then build the application image:
 
@@ -1220,6 +1239,12 @@ docker compose down
 
 The Docker Compose configuration uses a named Hugging Face cache volume so downloaded models can survive normal container recreation.
 
+If this project was previously run with the older root-based image, the existing cache volume may still be owned by root. Recreate only that disposable model cache before the first hardened-container run:
+
+docker compose down -v
+
+The FAISS index is a host bind mount and is not deleted by this command. Hugging Face models will be downloaded again on the next startup.
+
 Avoid:
 
 docker compose down -v
@@ -1259,6 +1284,20 @@ docker compose run --rm api python -m pytest -v
 
 This provides an additional environment-independence check for a project developed primarily on Windows.
 
+CI Container Validation
+
+Standard GitHub Actions CI now builds and loads the image, verifies that its effective UID is `10001`, and runs the fast test suite inside the built container.
+
+The separate `RAG Real-Stack Integration` workflow is manual because it downloads the pinned embedding and generator models. From the GitHub Actions page, run that workflow to:
+
+- rebuild the real FAISS index
+- start the hardened API and Streamlit services
+- wait for both health checks
+- verify the non-root and read-only runtime controls
+- submit an authenticated query through the real retrieval and generation stack
+
+This manual workflow complements normal CI without forcing every pull request to download and execute the full local model stack.
+
 Current Limitations
 
 Current limitations include:
@@ -1279,11 +1318,11 @@ Answer keyword coverage is a lightweight deterministic metric and does not captu
 
 The system uses local FAISS rather than a distributed vector database.
 
-Authentication and API rate limiting have not yet been implemented.
+API-key authentication is implemented. Rate limiting and fine-grained authorisation have not yet been implemented.
 
-Structured production logging, tracing and monitoring have not yet been implemented.
+Structured JSON logging and request IDs are implemented. Distributed tracing, centralised monitoring and alerting have not yet been implemented.
 
-Prompt-injection and malicious-document defences have not yet been fully hardened.
+Prompt-injection-aware grounding is implemented, but malicious-document defences cannot be considered complete.
 
 The application is containerised but is not yet deployed to a managed cloud production environment.
 
@@ -1444,6 +1483,6 @@ Docker containerisation:
 Complete
 
 GitHub Actions CI/CD:
-Next
+Complete
 
 The project currently represents a production-style RAG application architecture. It should not be interpreted as a fully operated production service until deployment, access controls, monitoring, production security controls and operational ownership are added

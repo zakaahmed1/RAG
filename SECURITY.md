@@ -326,7 +326,7 @@ Before deployment as a genuine production service, the following controls should
 - authorisation / access control
 - rate limiting
 - network restrictions
-- hardened container configuration
+- ongoing container-image vulnerability scanning and patching
 - vulnerability monitoring
 - dependency patching process
 - centralised logging and alerting
@@ -338,6 +338,8 @@ Before deployment as a genuine production service, the following controls should
 - monitoring for prompt injection and abnormal usage
 
 The current project should therefore be described as having a **production-style architecture**, not as a fully production-secured internet service.
+
+The current container baseline reduces risk by using an immutable Python base-image digest, a dedicated non-root UID/GID, a read-only root filesystem, dropped Linux capabilities, `no-new-privileges`, process limits and read-only FAISS runtime data. These controls reduce container privileges but do not replace host, orchestrator, network or supply-chain security.
 
 ---
 
