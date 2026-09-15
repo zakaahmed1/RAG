@@ -469,6 +469,37 @@ avoid inventing unsupported facts
 
 abstain when the supplied evidence is insufficient
 
+Prompt Token Diagnostics
+
+Before generation, the application now measures both the complete prompt and the tokenized model input. Structured generation logs record:
+
+- tokens before and after truncation
+- the model input-token limit
+- the number of removed tokens
+- whether the prompt was truncated
+- whether the complete context survived
+- whether the complete question survived
+
+Full evaluation result rows contain the same data in `prompt_token_usage`. Evaluation summaries report truncation, context-retention and question-retention rates, plus the largest untruncated prompt. This instrumentation does not alter the prompt, retrieval settings or model behaviour.
+
+Pre-Phase-12 Token Audit
+
+Using the pinned FLAN-T5 tokenizer, a freshly rebuilt index and the default retrieval configuration, the 40-question benchmark produced 33 prompts for generation. The audit found:
+
+- 18 of 33 prompts were truncated
+- 14 of 33 did not retain the complete context
+- 17 of 33 did not retain the complete question
+- prompt lengths ranged from 299 to 626 tokens before truncation
+- AA003 contained 564 tokens before truncation and 512 afterward; neither its complete context nor its complete question was retained
+
+This confirms a real generation-input limitation. It is recorded here without changing the model, prompt order or token-budget strategy before Phase 12.
+
+Reproduce the token audit without loading or running the language model:
+
+python -m app.evaluation.prompt_audit
+
+The command writes the detailed per-question report and provenance to `results/prompt_token_audit_all.json`. Use `--split tune` or `--split test` to audit one benchmark partition.
+
 When evidence is insufficient, the application uses the shared abstention response:
 
 I could not find sufficient information in the supplied documents.
@@ -900,6 +931,8 @@ results/
 
 with separate files for tuning, holdout and complete benchmark runs.
 
+For full generation runs, inspect `prompt_token_usage` in the result JSON and summary JSON to determine whether FLAN-T5 received the complete context and question.
+
 FastAPI Service
 
 The RAG pipeline is exposed through a FastAPI service.
@@ -1040,26 +1073,15 @@ Automated Testing
 
 The project uses pytest for unit, API and integration testing.
 
-The current suite contains 22 automated tests.
-
 Run the fast suite:
 
 python -m pytest -m "not integration" -v
-
-Current fast-suite result:
-
-21 passed
-1 integration test deselected
 
 Run the complete suite:
 
 python -m pytest -v
 
-Current complete-suite result:
-
-22 passed
-
-The complete suite includes a real FAISS retrieval regression test.
+The complete suite includes real FAISS retrieval and model-generation regression tests. The model test is also marked `slow`, so it remains excluded from the normal CI suite.
 
 Test Coverage Areas
 
@@ -1083,10 +1105,12 @@ FastAPI status endpoint
 FastAPI query endpoint
 FastAPI validation
 real persisted-FAISS retrieval regression
+prompt token and truncation diagnostics
+generated-answer regression for AA003
 
 AA003 Regression Test
 
-The known adversarial AA003 example is retained as a retrieval regression case.
+The known adversarial AA003 example is retained as both a retrieval regression case and an opt-in model-generation regression case.
 
 The integration test verifies that the correct evidence from:
 
@@ -1095,7 +1119,13 @@ ITSecurityPolicy.txt
 
 continues to be retrieved.
 
-The generation failure itself remains documented for future Phase 12 work.
+The slow generation test also requires the answer to reject waiting until the next day, state the two-hour reporting deadline and confirm that the complete question reached the model. It is a strict expected failure while the documented pre-Phase-12 defect remains; once Phase 12 corrects the behaviour, the unexpected pass will require removal of the `xfail` marker.
+
+Run only that model regression with:
+
+python -m pytest tests/test_generation_regression.py -v
+
+It is intentionally excluded by `python -m pytest -m "not integration"`, so routine CI does not download or execute the real model.
 
 Coverage Report
 

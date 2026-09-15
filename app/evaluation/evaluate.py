@@ -211,6 +211,45 @@ def safe_mean(values):
     return mean(values)
 
 
+def build_prompt_usage_summary(results):
+    """Aggregate prompt truncation diagnostics for generated answers."""
+
+    generated_rows = [
+        row
+        for row in results
+        if row.get("prompt_token_usage")
+    ]
+
+    return {
+        "generated_answers": len(generated_rows),
+        "truncation_rate": safe_mean(
+            [
+                int(row["prompt_token_usage"]["prompt_truncated"])
+                for row in generated_rows
+            ]
+        ),
+        "context_fully_retained_rate": safe_mean(
+            [
+                int(row["prompt_token_usage"]["context_fully_retained"])
+                for row in generated_rows
+            ]
+        ),
+        "question_fully_retained_rate": safe_mean(
+            [
+                int(row["prompt_token_usage"]["question_fully_retained"])
+                for row in generated_rows
+            ]
+        ),
+        "maximum_tokens_before_truncation": max(
+            (
+                row["prompt_token_usage"]["tokens_before_truncation"]
+                for row in generated_rows
+            ),
+            default=None,
+        ),
+    }
+
+
 def format_retrieved_sources(chunks):
     """
     Convert retrieved chunks into JSON-serialisable
@@ -364,15 +403,19 @@ def evaluate(
         # -------------------------------------------------
 
         answer = ""
+        prompt_token_usage = None
 
         if not retrieval_only:
 
             if chunks:
 
+                prompt_token_usage = {}
+
                 answer = generate_answer(
                     generator=generator,
                     question=question,
                     retrieved_chunks=chunks,
+                    diagnostics=prompt_token_usage,
                 )
 
             else:
@@ -404,6 +447,7 @@ def evaluate(
             "top_similarity": top_similarity,
             "sources": sources,
             "answer": answer,
+            "prompt_token_usage": prompt_token_usage,
         }
 
         # -------------------------------------------------
@@ -618,6 +662,10 @@ def build_summary(
                 for row
                 in unsupported
             ]
+        )
+
+        summary["prompt_token_usage"] = (
+            build_prompt_usage_summary(results)
         )
 
     # -----------------------------------------------------
@@ -888,6 +936,10 @@ def save_results(
 
         csv_row["sources"] = json.dumps(
             csv_row["sources"]
+        )
+
+        csv_row["prompt_token_usage"] = json.dumps(
+            csv_row["prompt_token_usage"]
         )
 
         csv_rows.append(

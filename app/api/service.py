@@ -287,6 +287,8 @@ class RAGService:
                 perf_counter()
             )
 
+            prompt_diagnostics = {}
+
             try:
 
                 with self._generation_lock:
@@ -299,6 +301,9 @@ class RAGService:
                             question=question,
                             retrieved_chunks=(
                                 retrieved_chunks
+                            ),
+                            diagnostics=(
+                                prompt_diagnostics
                             ),
                         )
                     )
@@ -342,6 +347,7 @@ class RAGService:
                     answer
                     == ABSTENTION_TEXT
                 ),
+                **prompt_diagnostics,
             )
 
         # -------------------------------------------------

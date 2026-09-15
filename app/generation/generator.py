@@ -117,10 +117,150 @@ Answer:
     return prompt
 
 
+def _first_token_sequence(value):
+    """Return one sequence of token IDs from lists or tensors."""
+
+    if hasattr(value, "tolist"):
+        value = value.tolist()
+
+    if value and isinstance(value[0], list):
+        return value[0]
+
+    return value
+
+
+def _section_is_retained(
+    prompt,
+    section,
+    offsets,
+    *,
+    last_occurrence=False,
+):
+    """Check whether a prompt section survives tokenizer truncation."""
+
+    if not section:
+        return True
+
+    find_section = (
+        prompt.rfind
+        if last_occurrence
+        else prompt.find
+    )
+    section_start = find_section(section)
+
+    if section_start < 0:
+        return False
+
+    section_end = section_start + len(section)
+
+    content_offsets = [
+        offset
+        for offset in offsets
+        if offset[1] > offset[0]
+    ]
+
+    if not content_offsets:
+        return False
+
+    retained_start = min(
+        offset[0]
+        for offset in content_offsets
+    )
+    retained_end = max(
+        offset[1]
+        for offset in content_offsets
+    )
+
+    return (
+        retained_start <= section_start
+        and retained_end >= section_end
+    )
+
+
+def prepare_generator_inputs(
+    tokenizer,
+    prompt,
+    context,
+    question,
+):
+    """Tokenize a prompt and report exactly what truncation removed."""
+
+    analysis = tokenizer(
+        prompt,
+        add_special_tokens=True,
+        truncation=False,
+    )
+
+    full_token_ids = _first_token_sequence(
+        analysis["input_ids"]
+    )
+
+    inputs = tokenizer(
+        prompt,
+        return_tensors="pt",
+        truncation=True,
+        return_offsets_mapping=True,
+    )
+
+    retained_offsets = inputs.pop(
+        "offset_mapping"
+    )
+
+    retained_token_ids = _first_token_sequence(
+        inputs["input_ids"]
+    )
+
+    before_count = len(full_token_ids)
+    after_count = len(retained_token_ids)
+    truncated_count = max(
+        before_count - after_count,
+        0,
+    )
+
+    if hasattr(retained_offsets, "tolist"):
+        retained_offsets = retained_offsets.tolist()
+
+    if (
+        retained_offsets
+        and isinstance(retained_offsets[0], list)
+        and retained_offsets[0]
+        and isinstance(retained_offsets[0][0], (list, tuple))
+    ):
+        retained_offsets = retained_offsets[0]
+
+    model_max_length = getattr(
+        tokenizer,
+        "model_max_length",
+        None,
+    )
+
+    diagnostics = {
+        "tokens_before_truncation": before_count,
+        "tokens_after_truncation": after_count,
+        "model_max_input_tokens": model_max_length,
+        "truncated_tokens": truncated_count,
+        "prompt_truncated": truncated_count > 0,
+        "context_fully_retained": _section_is_retained(
+            prompt,
+            context,
+            retained_offsets,
+        ),
+        "question_fully_retained": _section_is_retained(
+            prompt,
+            question,
+            retained_offsets,
+            last_occurrence=True,
+        ),
+    }
+
+    return inputs, diagnostics
+
+
 def generate_answer(
     generator,
     question,
     retrieved_chunks,
+    diagnostics=None,
 ):
     """
     Generate an answer using retrieved document context.
@@ -137,11 +277,17 @@ def generate_answer(
         context=context,
     )
 
-    inputs = tokenizer(
-        prompt,
-        return_tensors="pt",
-        truncation=True,
+    inputs, prompt_diagnostics = prepare_generator_inputs(
+        tokenizer=tokenizer,
+        prompt=prompt,
+        context=context,
+        question=question,
     )
+
+    if diagnostics is not None:
+        diagnostics.update(
+            prompt_diagnostics
+        )
 
     outputs = model.generate(
         **inputs,
