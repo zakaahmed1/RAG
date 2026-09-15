@@ -1,9 +1,14 @@
 import csv
+import json
 from pathlib import Path
 
 from app.evaluation.evaluate import (
+    build_run_provenance,
     build_summary,
     evaluate,
+)
+from app.retrieval.vector_store import (
+    load_vector_store,
 )
 
 
@@ -55,6 +60,28 @@ RETRIEVAL_MODES = [
 MMR_LAMBDA = 0.7
 
 
+def build_sweep_provenance(total_configurations):
+    """Record the code and complete parameter grid for a sweep."""
+
+    provenance = build_run_provenance(
+        retrieval_only=True,
+        split="tune",
+    )
+    provenance["evaluation"].update(
+        {
+            "type": "retrieval_parameter_sweep",
+            "total_configurations": total_configurations,
+            "thresholds": THRESHOLDS,
+            "top_k_values": TOP_K_VALUES,
+            "fetch_k_values": FETCH_K_VALUES,
+            "retrieval_modes": RETRIEVAL_MODES,
+            "mmr_lambda": MMR_LAMBDA,
+            "mmr_threshold_backfill": True,
+        }
+    )
+    return provenance
+
+
 # ---------------------------------------------------------
 # Sweep execution
 # ---------------------------------------------------------
@@ -75,6 +102,7 @@ def run_sweep():
     )
 
     current_configuration = 0
+    vector_store = load_vector_store()
 
     print(
         f"Running {total_configurations} "
@@ -116,6 +144,7 @@ def run_sweep():
                         mmr_lambda=MMR_LAMBDA,
                         retrieval_only=True,
                         split="tune",
+                        vector_store=vector_store,
                     )
 
                     # -------------------------------------
@@ -279,6 +308,7 @@ def run_sweep():
         writer = csv.DictWriter(
             file,
             fieldnames=sweep_results[0].keys(),
+            lineterminator="\n",
         )
 
         writer.writeheader()
@@ -286,6 +316,21 @@ def run_sweep():
         writer.writerows(
             sweep_results
         )
+
+    provenance_path = (
+        RESULTS_DIR
+        / "retrieval_sweep_provenance.json"
+    )
+    provenance_path.write_text(
+        json.dumps(
+            build_sweep_provenance(
+                total_configurations
+            ),
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
     # -----------------------------------------------------
     # Print top configurations
@@ -335,6 +380,14 @@ def run_sweep():
 
     print(
         output_path
+    )
+
+    print(
+        "Sweep provenance saved to:"
+    )
+
+    print(
+        provenance_path
     )
 
 

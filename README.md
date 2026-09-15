@@ -399,12 +399,13 @@ and normally contains:
 
 index.faiss
 index.pkl
+manifest.json
 
 Re-run ingestion whenever the document knowledge base changes.
 
 Running the CLI
 
-The original CLI remains available.
+The CLI remains available and now uses the same `RAGService` as FastAPI.
 
 Once an index has been created:
 
@@ -412,8 +413,7 @@ python rag_app.py
 
 Example:
 
-Loading persistent FAISS vector store...
-Loading language model...
+Loading RAG service...
 RAG assistant ready.
 
 Ask a question (or type 'exit' to quit):
@@ -425,7 +425,7 @@ How many days annual leave do employees receive?
 --- Sources ---
 [1] EmployeeHandbook.pdf, page 4 (similarity: 0.666)
 
-The CLI remains useful for direct local testing of the RAG pipeline independently from FastAPI and Streamlit.
+The CLI remains useful for direct local testing without FastAPI or Streamlit. Retrieval, thresholding, abstention, generation and source metadata now flow through the shared service layer, preventing the CLI and API implementations from drifting apart.
 
 Retrieval
 
@@ -440,6 +440,8 @@ MIN_SIMILARITY = 0.425
 MMR_LAMBDA_MULT = 0.7
 
 MMR_LAMBDA_MULT remains available for experiments using Maximum Marginal Relevance, although the benchmark-selected production-style retrieval mode is similarity search.
+
+MMR ranks the complete `FETCH_K` candidate pool before threshold filtering. If an early MMR selection is below the similarity threshold, later eligible candidates backfill the response until `TOP_K` is reached or the candidate pool is exhausted.
 
 Embeddings are normalised before storage and retrieval.
 
@@ -686,7 +688,22 @@ Unsupported-query rejection accuracy
 
 with MRR retained as an additional ranking metric.
 
-Similarity search outperformed MMR on the current benchmark, particularly for cross-policy retrieval where multiple sources were required.
+The historical sweep favored similarity search, particularly for cross-policy retrieval. However, that comparison used an earlier MMR implementation which could discard below-threshold selections without backfilling them. It therefore should not be treated as proof that similarity is universally superior or as a perfectly apples-to-apples comparison.
+
+The corrected MMR implementation backfills from the remaining ranked candidate pool. Similarity remains the frozen active mode because its own benchmark results are valid; any future comparison with MMR should use a new sweep produced by the corrected implementation.
+
+Each new sweep writes both `results/retrieval_sweep.csv` and `results/retrieval_sweep_provenance.json`. The provenance file records the Git commit, dataset hash, model revisions, retrieval grid and corrected MMR backfill behaviour.
+
+The sweep loads the persisted vector store once and reuses it across all configurations.
+
+At the frozen default parameters, a post-fix retrieval-only comparison across all 40 questions produced:
+
+| Mode | Hit Rate@K | Evidence Recall@K | MRR | Unsupported rejection |
+| --- | ---: | ---: | ---: | ---: |
+| Similarity | 0.938 | 0.969 | 0.885 | 0.875 |
+| Corrected MMR | 0.906 | 0.953 | 0.885 | 0.875 |
+
+This supports retaining similarity for the current benchmark and configuration, but does not establish that similarity is universally better than MMR.
 
 The selected configuration was:
 
@@ -1332,8 +1349,6 @@ Automated testing with pytest
 Phase 8
 Docker containerisation and Docker Compose orchestration
 
-Remaining
-
 Phase 9
 GitHub Actions CI/CD
 
@@ -1342,6 +1357,8 @@ Structured logging and observability
 
 Phase 11
 Security and responsible-AI hardening
+
+Remaining
 
 Phase 12
 Generator improvements and regression evaluation
@@ -1392,7 +1409,9 @@ Status
 
 Current development status:
 
-Phases 1–8 complete.
+Phases 1–11 complete.
+
+Phase 12 has not started.
 
 Persistent multi-document RAG:
 Complete

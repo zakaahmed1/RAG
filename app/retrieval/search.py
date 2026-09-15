@@ -146,9 +146,12 @@ def retrieve_with_mmr(
         for chunk in candidates
     }
 
+    # Ask MMR to rank the complete candidate pool. If one of
+    # its early choices is below the similarity threshold, later
+    # eligible choices can then backfill the result set.
     mmr_documents = vector_store.max_marginal_relevance_search(
         query,
-        k=top_k,
+        k=fetch_k,
         fetch_k=fetch_k,
         lambda_mult=mmr_lambda,
     )
@@ -171,6 +174,9 @@ def retrieve_with_mmr(
 
         seen.add(key)
         results.append(candidate)
+
+        if len(results) == top_k:
+            break
 
     return results
 
@@ -214,22 +220,3 @@ def retrieve_documents(
     raise ValueError(
         f"Unsupported retrieval mode: {mode}"
     )
-
-
-def format_source_reference(
-    chunk: RetrievedChunk,
-) -> str:
-
-    metadata = chunk.document.metadata
-
-    file_name = metadata.get(
-        "file_name",
-        "Unknown source",
-    )
-
-    page_number = metadata.get("page_number")
-
-    if page_number is not None:
-        return f"{file_name}, page {page_number}"
-
-    return file_name

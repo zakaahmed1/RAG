@@ -296,6 +296,7 @@ def evaluate(
     mmr_lambda=MMR_LAMBDA_MULT,
     retrieval_only=False,
     split=None,
+    vector_store=None,
 ):
     """
     Evaluate the RAG system against the labelled
@@ -327,6 +328,11 @@ def evaluate(
         Optional benchmark split:
             "tune"
             "test"
+
+    vector_store:
+        Optional already-loaded store. Retrieval sweeps use
+        this to avoid reloading the same index for every
+        parameter combination.
     """
 
     dataset = load_dataset(
@@ -346,7 +352,8 @@ def evaluate(
     # Load vector store
     # -----------------------------------------------------
 
-    vector_store = load_vector_store()
+    if vector_store is None:
+        vector_store = load_vector_store()
 
     # -----------------------------------------------------
     # Load generator only when required

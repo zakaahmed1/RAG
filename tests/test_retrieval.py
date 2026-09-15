@@ -89,3 +89,71 @@ def test_empty_query_rejected():
             vector_store,
             "   ",
         )
+
+
+class FakeMMRVectorStore:
+
+    def __init__(self):
+        self.documents = [
+            Document(
+                page_content=f"Document {name}",
+                metadata={
+                    "file_name": f"{name}.txt",
+                    "source_path": f"{name}.txt",
+                    "page_number": None,
+                    "chunk_id": index,
+                },
+            )
+            for index, name in enumerate(
+                ("a", "below-threshold", "c", "d"),
+                start=1,
+            )
+        ]
+        self.mmr_arguments = None
+
+    def similarity_search_with_score(self, query, k):
+        distances = (0.2, 1.4, 0.4, 0.6)
+        return list(
+            zip(
+                self.documents[:k],
+                distances[:k],
+            )
+        )
+
+    def max_marginal_relevance_search(
+        self,
+        query,
+        k,
+        fetch_k,
+        lambda_mult,
+    ):
+        self.mmr_arguments = {
+            "k": k,
+            "fetch_k": fetch_k,
+            "lambda_mult": lambda_mult,
+        }
+        return self.documents[:k]
+
+
+def test_mmr_backfills_after_threshold_filtering():
+    vector_store = FakeMMRVectorStore()
+
+    results = retrieve_documents(
+        vector_store,
+        "policy question",
+        mode="mmr",
+        top_k=3,
+        fetch_k=4,
+        min_similarity=0.425,
+        mmr_lambda=0.7,
+    )
+
+    assert [
+        result.document.metadata["file_name"]
+        for result in results
+    ] == ["a.txt", "c.txt", "d.txt"]
+    assert vector_store.mmr_arguments == {
+        "k": 4,
+        "fetch_k": 4,
+        "lambda_mult": 0.7,
+    }

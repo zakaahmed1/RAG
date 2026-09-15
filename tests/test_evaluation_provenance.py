@@ -4,6 +4,9 @@ from app.evaluation.evaluate import (
     build_run_provenance,
     validate_dataset,
 )
+from app.evaluation.sweep import (
+    build_sweep_provenance,
+)
 def test_provenance_records_reproducibility_inputs():
     p=build_run_provenance(retrieval_only=True,split="test")
     assert len(p["dataset_sha256"])==64
@@ -49,3 +52,20 @@ def test_prompt_usage_summary_aggregates_generation_diagnostics():
         "question_fully_retained_rate": 0.5,
         "maximum_tokens_before_truncation": 600,
     }
+
+
+def test_sweep_provenance_records_grid_and_mmr_backfill():
+    provenance = build_sweep_provenance(
+        total_configurations=192
+    )
+    evaluation = provenance["evaluation"]
+
+    assert evaluation["type"] == (
+        "retrieval_parameter_sweep"
+    )
+    assert evaluation["total_configurations"] == 192
+    assert evaluation["retrieval_modes"] == [
+        "similarity",
+        "mmr",
+    ]
+    assert evaluation["mmr_threshold_backfill"] is True
