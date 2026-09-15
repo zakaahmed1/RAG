@@ -2,7 +2,6 @@ import logging
 
 from contextlib import asynccontextmanager
 from time import perf_counter
-from urllib import response
 from uuid import uuid4
 
 from fastapi import (
@@ -116,31 +115,6 @@ async def lifespan(
 # ---------------------------------------------------------
 # FastAPI application
 # ---------------------------------------------------------
-
-app = FastAPI(
-    title="RAG Knowledge Assistant API",
-    description=(
-        "API for querying a grounded "
-        "Retrieval-Augmented Generation system."
-    ),
-    version="0.11.0",
-    lifespan=lifespan,
-    docs_url=(
-        "/docs"
-        if ENABLE_DOCS
-        else None
-    ),
-    redoc_url=(
-        "/redoc"
-        if ENABLE_DOCS
-        else None
-    ),
-    openapi_url=(
-        "/openapi.json"
-        if ENABLE_DOCS
-        else None
-    ),
-)
 
 app = FastAPI(
     title="RAG Knowledge Assistant API",

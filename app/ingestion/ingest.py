@@ -31,7 +31,8 @@ def run_ingestion():
     )
 
     save_vector_store(
-        vector_store
+        vector_store,
+        chunk_count=len(chunks),
     )
 
     print(

@@ -14,6 +14,7 @@ DOCUMENTS_DIR = DATA_DIR / "documents"
 
 STORAGE_DIR = PROJECT_ROOT / "storage"
 VECTOR_STORE_DIR = STORAGE_DIR / "faiss_index"
+INDEX_MANIFEST_PATH = VECTOR_STORE_DIR / "manifest.json"
 
 
 # ---------------------------------------------------------
@@ -41,6 +42,9 @@ CHUNK_OVERLAP = 50
 # ---------------------------------------------------------
 
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL_REVISION = (
+    "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
+)
 
 
 # ---------------------------------------------------------
@@ -55,6 +59,7 @@ FETCH_K = 12
 MMR_LAMBDA_MULT = 0.7
 
 MIN_SIMILARITY = 0.425
+INDEX_SCHEMA_VERSION = 1
 
 
 # ---------------------------------------------------------

@@ -6,8 +6,10 @@ from time import perf_counter
 from app.config import (
     ABSTENTION_TEXT,
     EMBEDDING_MODEL_NAME,
+    EMBEDDING_MODEL_REVISION,
     FETCH_K,
     GENERATOR_MODEL_NAME,
+    GENERATOR_MODEL_REVISION,
     MIN_SIMILARITY,
     MMR_LAMBDA_MULT,
     RETRIEVAL_MODE,
@@ -446,6 +448,10 @@ class RAGService:
                 MIN_SIMILARITY,
             "embedding_model":
                 EMBEDDING_MODEL_NAME,
+            "embedding_revision":
+                EMBEDDING_MODEL_REVISION,
             "generator_model":
                 GENERATOR_MODEL_NAME,
+            "generator_revision":
+                GENERATOR_MODEL_REVISION,
         }
