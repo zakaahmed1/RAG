@@ -2,23 +2,30 @@
   "questions": 40,
   "supported_questions": 32,
   "unsupported_questions": 8,
-  "hit_rate_at_k": 1,
-  "evidence_recall": 1.0,
-  "mrr": 0.9479166666666666,
+  "hit_rate_at_k": 0.9375,
+  "evidence_recall": 0.96875,
+  "mrr": 0.8854166666666666,
   "unsupported_rejection_accuracy": 0.875,
-  "supported_answer_keyword_coverage": 0.7760416666666666,
-  "supported_answer_abstention_rate": 0,
+  "supported_answer_keyword_coverage": 0.3854166666666667,
+  "supported_answer_abstention_rate": 0.1875,
   "unsupported_answer_abstention_accuracy": 1,
+  "prompt_token_usage": {
+    "generated_answers": 33,
+    "truncation_rate": 0.5454545454545454,
+    "context_fully_retained_rate": 0.5757575757575758,
+    "question_fully_retained_rate": 0.48484848484848486,
+    "maximum_tokens_before_truncation": 626
+  },
   "categories": {
     "ambiguous_adversarial": {
       "questions": 5,
       "supported_questions": 5,
       "unsupported_questions": 0,
-      "hit_rate_at_k": 1,
-      "evidence_recall": 1.0,
+      "hit_rate_at_k": 0.6,
+      "evidence_recall": 0.8,
       "mrr": 1.0,
-      "answer_keyword_coverage": 0.1,
-      "answer_abstention_rate": 0
+      "answer_keyword_coverage": 0.0,
+      "answer_abstention_rate": 0.2
     },
     "cross_policy_multi_document": {
       "questions": 5,
@@ -27,8 +34,8 @@
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
       "mrr": 1.0,
-      "answer_keyword_coverage": 0.5666666666666667,
-      "answer_abstention_rate": 0
+      "answer_keyword_coverage": 0.06666666666666667,
+      "answer_abstention_rate": 0.2
     },
     "direct_supported": {
       "questions": 12,
@@ -37,8 +44,8 @@
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
       "mrr": 0.9583333333333334,
-      "answer_keyword_coverage": 0.9583333333333334,
-      "answer_abstention_rate": 0
+      "answer_keyword_coverage": 0.5,
+      "answer_abstention_rate": 0.25
     },
     "paraphrased_supported": {
       "questions": 10,
@@ -46,9 +53,9 @@
       "unsupported_questions": 0,
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
-      "mrr": 0.8833333333333333,
-      "answer_keyword_coverage": 1.0,
-      "answer_abstention_rate": 0
+      "mrr": 0.6833333333333333,
+      "answer_keyword_coverage": 0.6,
+      "answer_abstention_rate": 0.1
     },
     "unsupported": {
       "questions": 8,
@@ -56,6 +63,40 @@
       "unsupported_questions": 8,
       "unsupported_rejection_accuracy": 0.875,
       "answer_abstention_accuracy": 1
+    }
+  },
+  "provenance": {
+    "timestamp_utc": "2026-09-16T00:26:57.520796+00:00",
+    "git_commit_sha": "add883b1644e7b1f8f0de21efb59491332ab78e7",
+    "git_worktree_dirty": false,
+    "dataset_path": "evaluation\\questions.json",
+    "dataset_sha256": "300fca27e58c913e3edec924e16de4a6adac413315100eacc5a21e6576a0d9ee",
+    "python_version": "3.13.15",
+    "evaluation": {
+      "retrieval_only": false,
+      "split": null
+    },
+    "embedding": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "normalize_embeddings": true
+    },
+    "chunking": {
+      "chunk_size": 500,
+      "chunk_overlap": 50
+    },
+    "retrieval": {
+      "mode": "similarity",
+      "top_k": 4,
+      "fetch_k": 12,
+      "min_similarity": 0.425,
+      "mmr_lambda_mult": 0.7
+    },
+    "generation": {
+      "model": "google/flan-t5-base",
+      "revision": "7bcac572ce56db69c1ea7c8af255c5d7c9672fc2",
+      "max_new_tokens": 150,
+      "do_sample": false
     }
   }
 }

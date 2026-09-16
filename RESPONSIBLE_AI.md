@@ -34,6 +34,8 @@ multi-document synthesis and adversarial questions.
 Semantic similarity is not a calibrated probability that an answer is
 correct.
 
+The definitive post-Phase-11 baseline found that 18 of 33 generated prompts exceeded FLAN-T5 Base's 512-token input limit, and 17 did not retain the complete question. Prompt leakage and unrelated answers have been observed when truncation occurs. Citations showing that relevant evidence was retrieved do not by themselves guarantee that the generated answer used that evidence correctly.
+
 ## Prompt Injection
 
 Retrieved documents are treated as untrusted content and the generation

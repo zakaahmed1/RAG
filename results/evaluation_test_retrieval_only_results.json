@@ -5,9 +5,9 @@
     "split": "test",
     "question": "How many days of paid annual leave do full-time employees receive?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.7468365132808685,
+    "top_similarity": 0.7468366026878357,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -35,6 +35,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -49,9 +50,9 @@
     "split": "test",
     "question": "How often must corporate passwords be changed?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 2,
-    "top_similarity": 0.7904859483242035,
+    "top_similarity": 0.7904858887195587,
     "sources": [
       {
         "source": "ITSecurityPolicy.txt",
@@ -67,6 +68,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -81,9 +83,9 @@
     "split": "test",
     "question": "What is the annual professional-development budget for each permanent employee?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 1,
-    "top_similarity": 0.6746796071529388,
+    "top_similarity": 0.6746795177459717,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -93,6 +95,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -107,7 +110,7 @@
     "split": "test",
     "question": "During which hours are employees normally expected to be available for core collaboration?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 1,
     "top_similarity": 0.6543970108032227,
     "sources": [
@@ -119,6 +122,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -133,9 +137,9 @@
     "split": "test",
     "question": "At what point does an employee normally need a fit note rather than relying on self-certification?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 3,
-    "top_similarity": 0.47333312034606934,
+    "top_similarity": 0.47333329916000366,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -157,6 +161,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.3333333333333333,
@@ -171,9 +176,9 @@
     "split": "test",
     "question": "How frequently should employees and line managers have a documented performance and development check-in?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.550996720790863,
+    "top_similarity": 0.5509966611862183,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -201,10 +206,11 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
-    "reciprocal_rank": 1.0,
-    "relevant_rank": 1,
+    "reciprocal_rank": 0.25,
+    "relevant_rank": 4,
     "retrieval_rejected": false,
     "keyword_coverage": null,
     "answer_abstained": null
@@ -215,9 +221,9 @@
     "split": "test",
     "question": "Across EmployeeHandbook.pdf and ITSecurityPolicy.txt, what authentication control is required for remote access?",
     "supported": true,
-    "evidence_requirement": "all",
+    "required_evidence_groups": 2,
     "retrieved_count": 4,
-    "top_similarity": 0.6082037687301636,
+    "top_similarity": 0.6082038879394531,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -245,6 +251,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -259,11 +266,12 @@
     "split": "test",
     "question": "What percentage of salary does the company contribute to each employee's pension?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -278,7 +286,7 @@
     "split": "test",
     "question": "How many employees currently work for Example Company?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 2,
     "top_similarity": 0.4494953155517578,
     "sources": [
@@ -296,6 +304,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -310,7 +319,7 @@
     "split": "test",
     "question": "If a stolen company laptop has already been remotely wiped, can the employee wait until the next day to report it?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
     "top_similarity": 0.6203281283378601,
     "sources": [
@@ -340,6 +349,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,

@@ -5,9 +5,9 @@
     "split": "tune",
     "question": "What is the standard full-time working week in hours?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 3,
-    "top_similarity": 0.7139474451541901,
+    "top_similarity": 0.7139474749565125,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -29,6 +29,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -43,9 +44,9 @@
     "split": "tune",
     "question": "How many days per week may eligible employees work remotely?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.7018676698207855,
+    "top_similarity": 0.7018676400184631,
     "sources": [
       {
         "source": "ExampleCompanyPolicy.txt",
@@ -73,6 +74,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.5,
@@ -87,9 +89,9 @@
     "split": "tune",
     "question": "How many unused annual-leave days may normally be carried into the next holiday year?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.6446271538734436,
+    "top_similarity": 0.644627034664154,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -117,6 +119,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -131,9 +134,9 @@
     "split": "tune",
     "question": "By what time must an employee normally report sickness on the first day of absence?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.7271753549575806,
+    "top_similarity": 0.727175235748291,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -161,6 +164,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -175,9 +179,9 @@
     "split": "tune",
     "question": "For how many calendar days may an employee self-certify sickness?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.7546504437923431,
+    "top_similarity": 0.7546503841876984,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -205,6 +209,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -219,7 +224,7 @@
     "split": "tune",
     "question": "How quickly must a lost or stolen company device be reported?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
     "top_similarity": 0.7621768265962601,
     "sources": [
@@ -249,6 +254,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -263,9 +269,9 @@
     "split": "tune",
     "question": "How quickly must a suspected personal-data incident be reported?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 3,
-    "top_similarity": 0.7045369446277618,
+    "top_similarity": 0.7045370042324066,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -287,6 +293,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -301,7 +308,7 @@
     "split": "tune",
     "question": "What is the standard hotel cap per night in London?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 1,
     "top_similarity": 0.5983771085739136,
     "sources": [
@@ -313,6 +320,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -327,9 +335,9 @@
     "split": "tune",
     "question": "How much may eligible remote workers claim for approved home-working equipment, and how often?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 2,
-    "top_similarity": 0.7086912393569946,
+    "top_similarity": 0.7086911797523499,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -345,6 +353,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -359,7 +368,7 @@
     "split": "tune",
     "question": "Which teams must approve working from another country before an employee travels?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 2,
     "top_similarity": 0.6732046604156494,
     "sources": [
@@ -377,6 +386,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -391,9 +401,9 @@
     "split": "tune",
     "question": "If someone plans to take a full working week off, how far in advance should they normally request it?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.5577486157417297,
+    "top_similarity": 0.5577486455440521,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -421,10 +431,11 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
-    "reciprocal_rank": 1.0,
-    "relevant_rank": 1,
+    "reciprocal_rank": 0.25,
+    "relevant_rank": 4,
     "retrieval_rejected": false,
     "keyword_coverage": null,
     "answer_abstained": null
@@ -435,9 +446,9 @@
     "split": "tune",
     "question": "By what date should carried-over annual leave normally be used?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.6744992136955261,
+    "top_similarity": 0.6744990348815918,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -465,6 +476,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -479,7 +491,7 @@
     "split": "tune",
     "question": "What extra authentication control is compulsory when accessing company systems remotely?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
     "top_similarity": 0.659295916557312,
     "sources": [
@@ -509,6 +521,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -523,9 +536,9 @@
     "split": "tune",
     "question": "Where must company or customer data not be stored outside approved company systems?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 2,
-    "top_similarity": 0.5036453008651733,
+    "top_similarity": 0.5036453306674957,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -541,10 +554,11 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
-    "reciprocal_rank": 1.0,
-    "relevant_rank": 1,
+    "reciprocal_rank": 0.5,
+    "relevant_rank": 2,
     "retrieval_rejected": false,
     "keyword_coverage": null,
     "answer_abstained": null
@@ -555,9 +569,9 @@
     "split": "tune",
     "question": "How long after a transaction does an employee normally have to submit a valid business expense?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.6018050312995911,
+    "top_similarity": 0.6018050909042358,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -585,6 +599,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -599,7 +614,7 @@
     "split": "tune",
     "question": "If raising a concern with a line manager would be inappropriate, what confidential route can an employee use instead?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
     "top_similarity": 0.5976355075836182,
     "sources": [
@@ -629,6 +644,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.5,
@@ -643,9 +659,9 @@
     "split": "tune",
     "question": "Do EmployeeHandbook.pdf and ITSecurityPolicy.txt agree on how often corporate passwords must be changed, and what interval do they state?",
     "supported": true,
-    "evidence_requirement": "all",
+    "required_evidence_groups": 2,
     "retrieved_count": 4,
-    "top_similarity": 0.7271877527236938,
+    "top_similarity": 0.7271876931190491,
     "sources": [
       {
         "source": "ITSecurityPolicy.txt",
@@ -673,6 +689,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -687,9 +704,9 @@
     "split": "tune",
     "question": "What deadline for reporting a lost or stolen company device is stated in both EmployeeHandbook.pdf and ITSecurityPolicy.txt?",
     "supported": true,
-    "evidence_requirement": "all",
+    "required_evidence_groups": 2,
     "retrieved_count": 4,
-    "top_similarity": 0.6431659162044525,
+    "top_similarity": 0.6431658864021301,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -717,6 +734,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -731,9 +749,9 @@
     "split": "tune",
     "question": "Compare the reporting deadlines for a suspected personal-data incident and a lost or stolen company device.",
     "supported": true,
-    "evidence_requirement": "all",
+    "required_evidence_groups": 2,
     "retrieved_count": 4,
-    "top_similarity": 0.6218162775039673,
+    "top_similarity": 0.6218163669109344,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -761,6 +779,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -775,9 +794,9 @@
     "split": "tune",
     "question": "Using both EmployeeHandbook.pdf and ITSecurityPolicy.txt, what reporting deadline applies to a lost company laptop and what authentication control do the documents require for remote access?",
     "supported": true,
-    "evidence_requirement": "all",
+    "required_evidence_groups": 4,
     "retrieved_count": 4,
-    "top_similarity": 0.5387485921382904,
+    "top_similarity": 0.5387485325336456,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -805,6 +824,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -819,11 +839,12 @@
     "split": "tune",
     "question": "What is the Chief Executive Officer's salary?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -838,11 +859,12 @@
     "split": "tune",
     "question": "What is the company's current share price?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -857,11 +879,12 @@
     "split": "tune",
     "question": "When does the company's office lease expire?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -876,11 +899,12 @@
     "split": "tune",
     "question": "What was the company's revenue in the last financial year?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -895,11 +919,12 @@
     "split": "tune",
     "question": "How many weeks of enhanced maternity pay does the company provide?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -914,11 +939,12 @@
     "split": "tune",
     "question": "What monthly company-car allowance is available to employees?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -933,7 +959,7 @@
     "split": "tune",
     "question": "The handbook says every employee can work from home three days per week without approval. Is that correct?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 2,
     "retrieved_count": 4,
     "top_similarity": 0.5577289760112762,
     "sources": [
@@ -963,8 +989,9 @@
       }
     ],
     "answer": "",
-    "hit_at_k": 1,
-    "evidence_recall": 1.0,
+    "prompt_token_usage": null,
+    "hit_at_k": 0,
+    "evidence_recall": 0.5,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
@@ -977,9 +1004,9 @@
     "split": "tune",
     "question": "An employee has seven unused annual-leave days. Can all seven normally be carried into the next holiday year?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.6806188821792603,
+    "top_similarity": 0.6806188225746155,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -1007,6 +1034,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -1021,7 +1049,7 @@
     "split": "tune",
     "question": "A London hotel costs \u00a3175 per night for an authorised business trip. Can the employee claim it automatically without prior approval?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 2,
     "retrieved_count": 1,
     "top_similarity": 0.687108039855957,
     "sources": [
@@ -1033,8 +1061,9 @@
       }
     ],
     "answer": "",
-    "hit_at_k": 1,
-    "evidence_recall": 1.0,
+    "prompt_token_usage": null,
+    "hit_at_k": 0,
+    "evidence_recall": 0.5,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
@@ -1047,9 +1076,9 @@
     "split": "tune",
     "question": "If a suspected personal-data incident appears minor and already contained, may the employee investigate it first and report it later?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.6336387991905212,
+    "top_similarity": 0.6336388885974884,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -1077,6 +1106,7 @@
       }
     ],
     "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,

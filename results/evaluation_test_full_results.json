@@ -5,9 +5,9 @@
     "split": "test",
     "question": "How many days of paid annual leave do full-time employees receive?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.7468365132808685,
+    "top_similarity": 0.7468366026878357,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -34,14 +34,23 @@
         "similarity": 0.5103
       }
     ],
-    "answer": "25 days.",
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 606,
+      "tokens_after_truncation": 512,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 94,
+      "prompt_truncated": true,
+      "context_fully_retained": false,
+      "question_fully_retained": false
+    },
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": 0.0,
+    "answer_abstained": true
   },
   {
     "id": "DS007",
@@ -49,9 +58,9 @@
     "split": "test",
     "question": "How often must corporate passwords be changed?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 2,
-    "top_similarity": 0.7904859483242035,
+    "top_similarity": 0.7904858887195587,
     "sources": [
       {
         "source": "ITSecurityPolicy.txt",
@@ -66,7 +75,16 @@
         "similarity": 0.6202
       }
     ],
-    "answer": "every 90 days.",
+    "answer": "Every 90 days.",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 363,
+      "tokens_after_truncation": 363,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 0,
+      "prompt_truncated": false,
+      "context_fully_retained": true,
+      "question_fully_retained": true
+    },
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -81,9 +99,9 @@
     "split": "test",
     "question": "What is the annual professional-development budget for each permanent employee?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 1,
-    "top_similarity": 0.6746796071529388,
+    "top_similarity": 0.6746795177459717,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -92,14 +110,23 @@
         "similarity": 0.6747
       }
     ],
-    "answer": "\u00a3750.",
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 299,
+      "tokens_after_truncation": 299,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 0,
+      "prompt_truncated": false,
+      "context_fully_retained": true,
+      "question_fully_retained": true
+    },
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": 0.0,
+    "answer_abstained": true
   },
   {
     "id": "PS002",
@@ -107,7 +134,7 @@
     "split": "test",
     "question": "During which hours are employees normally expected to be available for core collaboration?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 1,
     "top_similarity": 0.6543970108032227,
     "sources": [
@@ -118,7 +145,16 @@
         "similarity": 0.6544
       }
     ],
-    "answer": "10:00 to 15:00 local time.",
+    "answer": "10:00 to 15:00",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 310,
+      "tokens_after_truncation": 310,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 0,
+      "prompt_truncated": false,
+      "context_fully_retained": true,
+      "question_fully_retained": true
+    },
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
@@ -133,9 +169,9 @@
     "split": "test",
     "question": "At what point does an employee normally need a fit note rather than relying on self-certification?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 3,
-    "top_similarity": 0.47333312034606934,
+    "top_similarity": 0.47333329916000366,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -156,7 +192,16 @@
         "similarity": 0.4553
       }
     ],
-    "answer": "For an absence lasting more than seven calendar days.",
+    "answer": "For an absence lasting more than seven calendar days, a fit note or other acceptable medical evidence is required.",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 425,
+      "tokens_after_truncation": 425,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 0,
+      "prompt_truncated": false,
+      "context_fully_retained": true,
+      "question_fully_retained": true
+    },
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.3333333333333333,
@@ -171,9 +216,9 @@
     "split": "test",
     "question": "How frequently should employees and line managers have a documented performance and development check-in?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
-    "top_similarity": 0.550996720790863,
+    "top_similarity": 0.5509966611862183,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -200,13 +245,22 @@
         "similarity": 0.4601
       }
     ],
-    "answer": "Once per quarter.",
+    "answer": "if applicable.",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 602,
+      "tokens_after_truncation": 512,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 90,
+      "prompt_truncated": true,
+      "context_fully_retained": false,
+      "question_fully_retained": false
+    },
     "hit_at_k": 1,
     "evidence_recall": 1.0,
-    "reciprocal_rank": 1.0,
-    "relevant_rank": 1,
+    "reciprocal_rank": 0.25,
+    "relevant_rank": 4,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
+    "keyword_coverage": 0.0,
     "answer_abstained": false
   },
   {
@@ -215,9 +269,9 @@
     "split": "test",
     "question": "Across EmployeeHandbook.pdf and ITSecurityPolicy.txt, what authentication control is required for remote access?",
     "supported": true,
-    "evidence_requirement": "all",
+    "required_evidence_groups": 2,
     "retrieved_count": 4,
-    "top_similarity": 0.6082037687301636,
+    "top_similarity": 0.6082038879394531,
     "sources": [
       {
         "source": "EmployeeHandbook.pdf",
@@ -244,14 +298,23 @@
         "similarity": 0.4457
       }
     ],
-    "answer": "Multi-factor authentication.",
+    "answer": "I could not find sufficient information in the supplied documents.",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 508,
+      "tokens_after_truncation": 508,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 0,
+      "prompt_truncated": false,
+      "context_fully_retained": true,
+      "question_fully_retained": true
+    },
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": 0.0,
+    "answer_abstained": true
   },
   {
     "id": "UN005",
@@ -259,11 +322,12 @@
     "split": "test",
     "question": "What percentage of salary does the company contribute to each employee's pension?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
     "answer": "I could not find sufficient information in the supplied documents.",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -278,7 +342,7 @@
     "split": "test",
     "question": "How many employees currently work for Example Company?",
     "supported": false,
-    "evidence_requirement": "none",
+    "required_evidence_groups": 0,
     "retrieved_count": 2,
     "top_similarity": 0.4494953155517578,
     "sources": [
@@ -296,6 +360,15 @@
       }
     ],
     "answer": "I could not find sufficient information in the supplied documents.",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 318,
+      "tokens_after_truncation": 318,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 0,
+      "prompt_truncated": false,
+      "context_fully_retained": true,
+      "question_fully_retained": true
+    },
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
@@ -310,7 +383,7 @@
     "split": "test",
     "question": "If a stolen company laptop has already been remotely wiped, can the employee wait until the next day to report it?",
     "supported": true,
-    "evidence_requirement": "any",
+    "required_evidence_groups": 1,
     "retrieved_count": 4,
     "top_similarity": 0.6203281283378601,
     "sources": [
@@ -339,7 +412,16 @@
         "similarity": 0.46
       }
     ],
-    "answer": "Yes.",
+    "answer": "6.3 Storage and sharing Company or customer data must not be stored in personal email, personal cloud storage or consumer file-sharing services. Sensitive information should only be shared with authorised recipients.",
+    "prompt_token_usage": {
+      "tokens_before_truncation": 564,
+      "tokens_after_truncation": 512,
+      "model_max_input_tokens": 512,
+      "truncated_tokens": 52,
+      "prompt_truncated": true,
+      "context_fully_retained": false,
+      "question_fully_retained": false
+    },
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,

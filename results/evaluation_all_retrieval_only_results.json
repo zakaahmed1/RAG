@@ -28,23 +28,15 @@
         "similarity": 0.4489
       }
     ],
-    "answer": "37.5 hours.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 507,
-      "tokens_after_truncation": 507,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS002",
@@ -81,23 +73,15 @@
         "similarity": 0.484
       }
     ],
-    "answer": "Overseas working Working from another country requires written approval from People & Culture, Tax and Information Security before travel. Employees must not assume that a personal holiday destination can be used as a temporary work location.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 549,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 37,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.5,
     "relevant_rank": 2,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS003",
@@ -134,23 +118,15 @@
         "similarity": 0.5103
       }
     ],
-    "answer": "I could not find sufficient information in the supplied documents.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 606,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 94,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": true
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS004",
@@ -187,23 +163,15 @@
         "similarity": 0.4887
       }
     ],
-    "answer": "Employees should submit the request at least 10 working days in advance.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 559,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 47,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS005",
@@ -240,23 +208,15 @@
         "similarity": 0.4468
       }
     ],
-    "answer": "[Source 1: Employee Handbook (Fictional RAG Test Document) Page 5 4. Sickness Absence and Wellbeing 4.1 Reporting sickness If an employee is unable to work because of illness, they must notify their line manager by 9:00 a.m. on the first day of absence, or as soon as reasonably possible in an emergency. A text message should only be used where the manager has agreed that method. 4.2 Certification [Source 2: EmployeeHandbook.pdf, page 5] 4.2 Certification Employees may self-certify sickness for the first seven calendar days. For an absence lasting more than seven calendar days, a fit note or other acceptable medical evidence is required. 4.3 Return to work Manager",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 542,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 30,
-      "prompt_truncated": true,
-      "context_fully_retained": true,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS006",
@@ -293,23 +253,15 @@
         "similarity": 0.5247
       }
     ],
-    "answer": "[Source 1: Employee Handbook.pdf, page 5]",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 539,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 27,
-      "prompt_truncated": true,
-      "context_fully_retained": true,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS007",
@@ -334,23 +286,15 @@
         "similarity": 0.6202
       }
     ],
-    "answer": "Every 90 days.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 363,
-      "tokens_after_truncation": 363,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS008",
@@ -387,23 +331,15 @@
         "similarity": 0.454
       }
     ],
-    "answer": "Information Security within two hours of discovery.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 552,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 40,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS009",
@@ -434,23 +370,15 @@
         "similarity": 0.4328
       }
     ],
-    "answer": "within one hour of discovery",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 487,
-      "tokens_after_truncation": 487,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS010",
@@ -469,23 +397,15 @@
         "similarity": 0.5984
       }
     ],
-    "answer": "\u00a3150 per night",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 301,
-      "tokens_after_truncation": 301,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS011",
@@ -504,23 +424,15 @@
         "similarity": 0.6747
       }
     ],
-    "answer": "I could not find sufficient information in the supplied documents.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 299,
-      "tokens_after_truncation": 299,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": true
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "DS012",
@@ -545,23 +457,15 @@
         "similarity": 0.4593
       }
     ],
-    "answer": "I could not find sufficient information in the supplied documents.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 396,
-      "tokens_after_truncation": 396,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": true
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS001",
@@ -586,23 +490,15 @@
         "similarity": 0.4618
       }
     ],
-    "answer": "People & Culture, Tax and Information Security",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 385,
-      "tokens_after_truncation": 385,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS002",
@@ -621,23 +517,15 @@
         "similarity": 0.6544
       }
     ],
-    "answer": "10:00 to 15:00",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 310,
-      "tokens_after_truncation": 310,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS003",
@@ -674,23 +562,15 @@
         "similarity": 0.5197
       }
     ],
-    "answer": "days in advance.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 561,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 49,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.25,
     "relevant_rank": 4,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS004",
@@ -727,23 +607,15 @@
         "similarity": 0.4786
       }
     ],
-    "answer": "I could not find sufficient information in the supplied documents.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 552,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 40,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": true
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS005",
@@ -774,23 +646,15 @@
         "similarity": 0.4553
       }
     ],
-    "answer": "For an absence lasting more than seven calendar days, a fit note or other acceptable medical evidence is required.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 425,
-      "tokens_after_truncation": 425,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.3333333333333333,
     "relevant_rank": 3,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS006",
@@ -827,23 +691,15 @@
         "similarity": 0.44
       }
     ],
-    "answer": "Multi-factor authentication",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 502,
-      "tokens_after_truncation": 502,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS007",
@@ -868,23 +724,15 @@
         "similarity": 0.5
       }
     ],
-    "answer": "In personal email, personal cloud storage or consumer file-sharing services.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 388,
-      "tokens_after_truncation": 388,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.5,
     "relevant_rank": 2,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS008",
@@ -921,23 +769,15 @@
         "similarity": 0.4457
       }
     ],
-    "answer": "[Source 1: Company - Employee Handbook (Fictional RAG Test Document) Page 8 7. Business Travel and Expenses 7.1 Claim deadlines Valid business expenses should be submitted through the expense system within 30 days of the transaction. Receipts are required unless the expense policy expressly allows an exception. 3.3 Carry-over Up to five unused annual-leave days may normally be carried into the next holiday year with manager approval. Carried-over leave should be used by 31 March unless a statutory exception applies. [Source 4: ExampleCompanyPolicy.txt] ## Expense Reimbursement Employees can claim expenses",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 560,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 48,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 1.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS009",
@@ -974,23 +814,15 @@
         "similarity": 0.4601
       }
     ],
-    "answer": "if applicable.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 602,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 90,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.25,
     "relevant_rank": 4,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "PS010",
@@ -1027,23 +859,15 @@
         "similarity": 0.4716
       }
     ],
-    "answer": "CONTEXT>",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 626,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 114,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 0.5,
     "relevant_rank": 2,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "CP001",
@@ -1080,23 +904,15 @@
         "similarity": 0.4423
       }
     ],
-    "answer": "Is there anything else I can do to help you?",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 515,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 3,
-      "prompt_truncated": true,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "CP002",
@@ -1133,23 +949,15 @@
         "similarity": 0.4457
       }
     ],
-    "answer": "I could not find sufficient information in the supplied documents.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 508,
-      "tokens_after_truncation": 508,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": true
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "CP003",
@@ -1186,23 +994,15 @@
         "similarity": 0.4775
       }
     ],
-    "answer": "Damage and faults section.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 573,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 61,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "CP004",
@@ -1239,23 +1039,15 @@
         "similarity": 0.425
       }
     ],
-    "answer": "should report any hardware faults promptly.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 601,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 89,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "CP005",
@@ -1292,23 +1084,15 @@
         "similarity": 0.4457
       }
     ],
-    "answer": "Working 10.1 Company equipment Laptops, phones and other equipment remain company property unless formally transferred in writing. 10.2 Home-working",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 599,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 87,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.3333333333333333,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "UN001",
@@ -1320,7 +1104,7 @@
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
-    "answer": "I could not find sufficient information in the supplied documents.",
+    "answer": "",
     "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
@@ -1328,7 +1112,7 @@
     "relevant_rank": null,
     "keyword_coverage": null,
     "retrieval_rejected": true,
-    "answer_abstained": true
+    "answer_abstained": null
   },
   {
     "id": "UN002",
@@ -1340,7 +1124,7 @@
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
-    "answer": "I could not find sufficient information in the supplied documents.",
+    "answer": "",
     "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
@@ -1348,7 +1132,7 @@
     "relevant_rank": null,
     "keyword_coverage": null,
     "retrieval_rejected": true,
-    "answer_abstained": true
+    "answer_abstained": null
   },
   {
     "id": "UN003",
@@ -1360,7 +1144,7 @@
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
-    "answer": "I could not find sufficient information in the supplied documents.",
+    "answer": "",
     "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
@@ -1368,7 +1152,7 @@
     "relevant_rank": null,
     "keyword_coverage": null,
     "retrieval_rejected": true,
-    "answer_abstained": true
+    "answer_abstained": null
   },
   {
     "id": "UN004",
@@ -1380,7 +1164,7 @@
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
-    "answer": "I could not find sufficient information in the supplied documents.",
+    "answer": "",
     "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
@@ -1388,7 +1172,7 @@
     "relevant_rank": null,
     "keyword_coverage": null,
     "retrieval_rejected": true,
-    "answer_abstained": true
+    "answer_abstained": null
   },
   {
     "id": "UN005",
@@ -1400,7 +1184,7 @@
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
-    "answer": "I could not find sufficient information in the supplied documents.",
+    "answer": "",
     "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
@@ -1408,7 +1192,7 @@
     "relevant_rank": null,
     "keyword_coverage": null,
     "retrieval_rejected": true,
-    "answer_abstained": true
+    "answer_abstained": null
   },
   {
     "id": "UN006",
@@ -1420,7 +1204,7 @@
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
-    "answer": "I could not find sufficient information in the supplied documents.",
+    "answer": "",
     "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
@@ -1428,7 +1212,7 @@
     "relevant_rank": null,
     "keyword_coverage": null,
     "retrieval_rejected": true,
-    "answer_abstained": true
+    "answer_abstained": null
   },
   {
     "id": "UN007",
@@ -1440,7 +1224,7 @@
     "retrieved_count": 0,
     "top_similarity": null,
     "sources": [],
-    "answer": "I could not find sufficient information in the supplied documents.",
+    "answer": "",
     "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
@@ -1448,7 +1232,7 @@
     "relevant_rank": null,
     "keyword_coverage": null,
     "retrieval_rejected": true,
-    "answer_abstained": true
+    "answer_abstained": null
   },
   {
     "id": "UN008",
@@ -1473,23 +1257,15 @@
         "similarity": 0.4337
       }
     ],
-    "answer": "I could not find sufficient information in the supplied documents.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 318,
-      "tokens_after_truncation": 318,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": null,
     "evidence_recall": null,
     "reciprocal_rank": null,
     "relevant_rank": null,
     "keyword_coverage": null,
     "retrieval_rejected": false,
-    "answer_abstained": true
+    "answer_abstained": null
   },
   {
     "id": "AA001",
@@ -1526,23 +1302,15 @@
         "similarity": 0.5088
       }
     ],
-    "answer": "Is there anything else I can help you with?",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 479,
-      "tokens_after_truncation": 479,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 0,
     "evidence_recall": 0.5,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "AA002",
@@ -1579,23 +1347,15 @@
         "similarity": 0.466
       }
     ],
-    "answer": "re-establish trust.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 567,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 55,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "AA003",
@@ -1632,23 +1392,15 @@
         "similarity": 0.46
       }
     ],
-    "answer": "6.3 Storage and sharing Company or customer data must not be stored in personal email, personal cloud storage or consumer file-sharing services. Sensitive information should only be shared with authorised recipients.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 564,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 52,
-      "prompt_truncated": true,
-      "context_fully_retained": false,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "AA004",
@@ -1667,23 +1419,15 @@
         "similarity": 0.6871
       }
     ],
-    "answer": "I could not find sufficient information in the supplied documents.",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 315,
-      "tokens_after_truncation": 315,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 0,
-      "prompt_truncated": false,
-      "context_fully_retained": true,
-      "question_fully_retained": true
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 0,
     "evidence_recall": 0.5,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": true
+    "keyword_coverage": null,
+    "answer_abstained": null
   },
   {
     "id": "AA005",
@@ -1720,22 +1464,14 @@
         "similarity": 0.4258
       }
     ],
-    "answer": "SECURITY AND GROUNDING RULES:",
-    "prompt_token_usage": {
-      "tokens_before_truncation": 557,
-      "tokens_after_truncation": 512,
-      "model_max_input_tokens": 512,
-      "truncated_tokens": 45,
-      "prompt_truncated": true,
-      "context_fully_retained": true,
-      "question_fully_retained": false
-    },
+    "answer": "",
+    "prompt_token_usage": null,
     "hit_at_k": 1,
     "evidence_recall": 1.0,
     "reciprocal_rank": 1.0,
     "relevant_rank": 1,
     "retrieval_rejected": false,
-    "keyword_coverage": 0.0,
-    "answer_abstained": false
+    "keyword_coverage": null,
+    "answer_abstained": null
   }
 ]

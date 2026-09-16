@@ -4,11 +4,18 @@
   "unsupported_questions": 2,
   "hit_rate_at_k": 1,
   "evidence_recall": 1.0,
-  "mrr": 0.9166666666666666,
+  "mrr": 0.8229166666666666,
   "unsupported_rejection_accuracy": 0.5,
-  "supported_answer_keyword_coverage": 0.875,
-  "supported_answer_abstention_rate": 0,
+  "supported_answer_keyword_coverage": 0.375,
+  "supported_answer_abstention_rate": 0.375,
   "unsupported_answer_abstention_accuracy": 1,
+  "prompt_token_usage": {
+    "generated_answers": 9,
+    "truncation_rate": 0.3333333333333333,
+    "context_fully_retained_rate": 0.6666666666666666,
+    "question_fully_retained_rate": 0.6666666666666666,
+    "maximum_tokens_before_truncation": 606
+  },
   "categories": {
     "ambiguous_adversarial": {
       "questions": 1,
@@ -27,8 +34,8 @@
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
       "mrr": 1.0,
-      "answer_keyword_coverage": 1.0,
-      "answer_abstention_rate": 0
+      "answer_keyword_coverage": 0.0,
+      "answer_abstention_rate": 1
     },
     "direct_supported": {
       "questions": 3,
@@ -37,8 +44,8 @@
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
       "mrr": 1.0,
-      "answer_keyword_coverage": 1.0,
-      "answer_abstention_rate": 0
+      "answer_keyword_coverage": 0.3333333333333333,
+      "answer_abstention_rate": 0.6666666666666666
     },
     "paraphrased_supported": {
       "questions": 3,
@@ -46,8 +53,8 @@
       "unsupported_questions": 0,
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
-      "mrr": 0.7777777777777778,
-      "answer_keyword_coverage": 1.0,
+      "mrr": 0.5277777777777778,
+      "answer_keyword_coverage": 0.6666666666666666,
       "answer_abstention_rate": 0
     },
     "unsupported": {
@@ -56,6 +63,40 @@
       "unsupported_questions": 2,
       "unsupported_rejection_accuracy": 0.5,
       "answer_abstention_accuracy": 1
+    }
+  },
+  "provenance": {
+    "timestamp_utc": "2026-09-16T00:38:10.485474+00:00",
+    "git_commit_sha": "add883b1644e7b1f8f0de21efb59491332ab78e7",
+    "git_worktree_dirty": false,
+    "dataset_path": "evaluation\\questions.json",
+    "dataset_sha256": "300fca27e58c913e3edec924e16de4a6adac413315100eacc5a21e6576a0d9ee",
+    "python_version": "3.13.15",
+    "evaluation": {
+      "retrieval_only": false,
+      "split": "test"
+    },
+    "embedding": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "normalize_embeddings": true
+    },
+    "chunking": {
+      "chunk_size": 500,
+      "chunk_overlap": 50
+    },
+    "retrieval": {
+      "mode": "similarity",
+      "top_k": 4,
+      "fetch_k": 12,
+      "min_similarity": 0.425,
+      "mmr_lambda_mult": 0.7
+    },
+    "generation": {
+      "model": "google/flan-t5-base",
+      "revision": "7bcac572ce56db69c1ea7c8af255c5d7c9672fc2",
+      "max_new_tokens": 150,
+      "do_sample": false
     }
   }
 }

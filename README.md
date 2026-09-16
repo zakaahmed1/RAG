@@ -366,6 +366,16 @@ py -m pip install -r requirements.txt
 
 The main dependencies include LangChain, sentence-transformers, FAISS, Transformers, FastAPI, Uvicorn, Streamlit, pytest, PyPDF and docx2txt.
 
+Dependency Locking
+
+`requirements.in` lists the direct dependencies and their reviewed versions. `requirements.txt` is the fully resolved installation lock. The lock deliberately uses the CPU-only PyTorch index because this application does not require CUDA; this avoids downloading the NVIDIA runtime packages during local, CI and Docker installations.
+
+After intentionally changing a direct dependency in `requirements.in`, regenerate the lock with:
+
+uv pip compile requirements.in -o requirements.txt --python-version 3.13 --index-strategy unsafe-best-match --emit-index-url
+
+The two configured package indexes must remain the official PyPI and PyTorch CPU indexes. Review the resulting diff and run the fast test suite before committing both files.
+
 Document Ingestion
 
 Add documents to:
@@ -712,182 +722,112 @@ TOP_K = 4
 FETCH_K = 12
 MIN_SIMILARITY = 0.425
 
-Tuning-Set Results
+## Definitive Post-Phase-11 / Pre-Phase-12 Baseline
 
-The selected configuration achieved the following results on the 30-question tuning set:
+This baseline was recorded on 16 September 2026 from Git commit `add883b1644e7b1f8f0de21efb59491332ab78e7`.
 
-Metric
+It uses:
 
-Result
+- the revised content-valid evidence labels
+- independently required evidence groups
+- boundary-aware answer keyword matching
+- immutable embedding and generator revisions
+- prompt-token and truncation diagnostics
+- the frozen similarity retrieval configuration
 
-Hit Rate@K
+These results supersede the earlier pre-audit benchmark. The previous and current generation metrics are not directly comparable because the Phase-11 prompt and evaluation methodology changed.
 
-1.000
+### Tuning-set retrieval
 
-Evidence Recall@K
+The 30-question tuning partition contains 24 supported and 6 unsupported questions.
 
-1.000
+| Metric | Result |
+| --- | ---: |
+| Hit Rate@K | 0.917 |
+| Evidence Recall@K | 0.958 |
+| MRR | 0.906 |
+| Unsupported retrieval rejection | 1.000 |
 
-MRR
+Two ambiguous/adversarial tuning questions, AA001 and AA004, retrieved one of two independently required evidence components. Both found valid evidence at rank one but did not retrieve every fact needed for a complete answer.
 
-0.958
+### Holdout results
 
-Unsupported-query rejection
+The untouched holdout partition contains 8 supported and 2 unsupported questions.
 
-1.000
+#### Holdout retrieval
 
-Category-level retrieval achieved complete Hit Rate and Evidence Recall across direct, paraphrased, cross-policy and adversarial supported questions.
+| Metric | Result |
+| --- | ---: |
+| Hit Rate@K | 1.000 |
+| Evidence Recall@K | 1.000 |
+| MRR | 0.823 |
+| Unsupported retrieval rejection | 0.500 |
 
-Holdout Results
+All eight supported holdout questions retrieved all required evidence. One unsupported question retrieved semantically related company-information content above the similarity threshold. The retrieval settings were not retuned after observing this result.
 
-After freezing the retrieval configuration, the system was evaluated against the untouched 10-question holdout set.
+#### Holdout generation
 
-The configuration was not changed after observing these results.
+| Metric | Result |
+| --- | ---: |
+| Supported answer keyword coverage | 0.375 |
+| Supported false-abstention rate | 0.375 |
+| Unsupported answer abstention | 1.000 |
+| Prompt truncation rate | 0.333 |
+| Complete-context retention | 0.667 |
+| Complete-question retention | 0.667 |
 
-Retrieval
+Retrieval therefore generalised substantially better than generation. Three of eight supported holdout questions incorrectly abstained despite relevant evidence being available.
 
-Metric
+### Full 40-question baseline
 
-Result
+| Metric | Result |
+| --- | ---: |
+| Supported questions | 32 |
+| Unsupported questions | 8 |
+| Hit Rate@K | 0.938 |
+| Evidence Recall@K | 0.969 |
+| MRR | 0.885 |
+| Unsupported retrieval rejection | 0.875 |
+| Supported answer keyword coverage | 0.385 |
+| Supported false-abstention rate | 0.188 |
+| Unsupported answer abstention | 1.000 |
 
-Supported questions
+Seven of eight unsupported questions were rejected during retrieval. The remaining unsupported question reached the generator and also produced the standard abstention response.
 
-8
+### Generation performance by category
 
-Unsupported questions
+| Category | Hit Rate@K | Evidence Recall@K | MRR | Answer keyword coverage | False-abstention rate |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Direct supported | 1.000 | 1.000 | 0.958 | 0.500 | 0.250 |
+| Paraphrased supported | 1.000 | 1.000 | 0.683 | 0.600 | 0.100 |
+| Cross-policy / multi-document | 1.000 | 1.000 | 1.000 | 0.067 | 0.200 |
+| Ambiguous / adversarial | 0.600 | 0.800 | 1.000 | 0.000 | 0.200 |
 
-2
+### Prompt truncation
 
-Hit Rate@K
+Of the 40 benchmark questions, 33 reached the generator:
 
-1.000
+- 18 of 33 prompts were truncated
+- 14 of 33 did not retain the complete context
+- 17 of 33 did not retain the complete question
+- the longest prompt contained 626 tokens before truncation
+- FLAN-T5 Base accepts a maximum of 512 input tokens
 
-Evidence Recall@K
+For supported questions whose complete question survived, average keyword coverage was 0.600. When the question was not fully retained, coverage fell to 0.196.
 
-1.000
+### AA003 regression
 
-MRR
+AA003 asks whether an employee may delay reporting a stolen laptop that has already been remotely wiped.
 
-0.917
+Retrieval found the correct handbook and IT-security evidence, achieving Hit Rate@K and Evidence Recall@K of 1.000. However, the prompt contained 564 tokens and was truncated to 512. The complete context and question were not retained.
 
-Unsupported-query rejection
+The generator consequently returned an unrelated data-storage passage rather than the required two-hour reporting rule. AA003 remains an explicit expected-failure integration regression until Phase 12 addresses generation.
 
-0.500
+### Interpretation
 
-All eight supported holdout questions retrieved all required evidence.
+The architecture and retrieval pipeline remain fundamentally sound. The improved evaluation demonstrates that the main current weakness is generation rather than basic evidence retrieval.
 
-One of the two unsupported questions retrieved semantically related company-information content above the configured threshold.
-
-The retrieval settings were deliberately not retuned against this holdout failure, preserving the integrity of the holdout evaluation.
-
-End-to-End Generation
-
-Metric
-
-Result
-
-Supported answer keyword coverage
-
-0.875
-
-Supported false-abstention rate
-
-0.000
-
-Unsupported answer abstention
-
-1.000
-
-Both unsupported holdout questions ultimately produced the expected abstention behaviour.
-
-This demonstrates a layered RAG control:
-
-Unsupported query
-       │
-       ▼
-Similarity threshold
-       │
-       ├── Rejected ──► Abstain
-       │
-       └── Retrieved evidence
-                 │
-                 ▼
-          Grounded generator
-                 │
-                 ▼
-              Abstain
-
-Full 40-Question Benchmark
-
-After recording the holdout results, the frozen system was evaluated descriptively across all 40 benchmark questions.
-
-Metric
-
-Result
-
-Supported questions
-
-32
-
-Unsupported questions
-
-8
-
-Hit Rate@K
-
-1.000
-
-Evidence Recall@K
-
-1.000
-
-MRR
-
-0.948
-
-Unsupported-query rejection
-
-0.875
-
-Supported answer keyword coverage
-
-0.776
-
-Supported false-abstention rate
-
-0.000
-
-Unsupported answer abstention
-
-1.000
-
-Retrieval therefore remained consistently strong across the complete benchmark.
-
-Generation Performance by Question Type
-
-Generation performance varied by question complexity:
-
-Category
-
-Answer Keyword Coverage
-
-Direct supported
-
-0.958
-
-Paraphrased supported
-
-1.000
-
-Cross-policy / multi-document
-
-0.567
-
-Ambiguous / adversarial
-
-0.100
-
-This shows that the primary limitation of the current system is no longer evidence retrieval.
+Prompt truncation is a major contributor, but it is not the only issue: some fully retained questions also produced incomplete answers or incorrect abstentions. Phase 12 must therefore address context budgeting, prompt structure, instruction following, multi-evidence synthesis and regression evaluation without weakening the Phase-11 security controls.
 
 FLAN-T5 Base performs well on straightforward and paraphrased factual questions but is less reliable when required to:
 

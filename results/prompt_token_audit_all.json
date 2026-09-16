@@ -1,0 +1,592 @@
+{
+  "summary": {
+    "generated_answers": 33,
+    "truncation_rate": 0.5454545454545454,
+    "context_fully_retained_rate": 0.5757575757575758,
+    "question_fully_retained_rate": 0.48484848484848486,
+    "maximum_tokens_before_truncation": 626,
+    "questions": 40,
+    "retrieval_rejections": 7
+  },
+  "provenance": {
+    "timestamp_utc": "2026-09-16T00:04:57.703736+00:00",
+    "git_commit_sha": "add883b1644e7b1f8f0de21efb59491332ab78e7",
+    "git_worktree_dirty": false,
+    "dataset_path": "evaluation\\questions.json",
+    "dataset_sha256": "300fca27e58c913e3edec924e16de4a6adac413315100eacc5a21e6576a0d9ee",
+    "python_version": "3.13.15",
+    "evaluation": {
+      "retrieval_only": true,
+      "split": null,
+      "type": "prompt_token_audit"
+    },
+    "embedding": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "normalize_embeddings": true
+    },
+    "chunking": {
+      "chunk_size": 500,
+      "chunk_overlap": 50
+    },
+    "retrieval": {
+      "mode": "similarity",
+      "top_k": 4,
+      "fetch_k": 12,
+      "min_similarity": 0.425,
+      "mmr_lambda_mult": 0.7
+    },
+    "generation": {
+      "model": "google/flan-t5-base",
+      "revision": "7bcac572ce56db69c1ea7c8af255c5d7c9672fc2",
+      "max_new_tokens": 150,
+      "do_sample": false
+    }
+  },
+  "questions": [
+    {
+      "id": "DS001",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 3,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 507,
+        "tokens_after_truncation": 507,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "DS002",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 549,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 37,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "DS003",
+      "split": "test",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 606,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 94,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "DS004",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 559,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 47,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "DS005",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 542,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 30,
+        "prompt_truncated": true,
+        "context_fully_retained": true,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "DS006",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 539,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 27,
+        "prompt_truncated": true,
+        "context_fully_retained": true,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "DS007",
+      "split": "test",
+      "supported": true,
+      "retrieved_count": 2,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 363,
+        "tokens_after_truncation": 363,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "DS008",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 552,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 40,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "DS009",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 3,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 487,
+        "tokens_after_truncation": 487,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "DS010",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 1,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 301,
+        "tokens_after_truncation": 301,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "DS011",
+      "split": "test",
+      "supported": true,
+      "retrieved_count": 1,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 299,
+        "tokens_after_truncation": 299,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "DS012",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 2,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 396,
+        "tokens_after_truncation": 396,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "PS001",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 2,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 385,
+        "tokens_after_truncation": 385,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "PS002",
+      "split": "test",
+      "supported": true,
+      "retrieved_count": 1,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 310,
+        "tokens_after_truncation": 310,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "PS003",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 561,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 49,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "PS004",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 552,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 40,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "PS005",
+      "split": "test",
+      "supported": true,
+      "retrieved_count": 3,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 425,
+        "tokens_after_truncation": 425,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "PS006",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 502,
+        "tokens_after_truncation": 502,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "PS007",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 2,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 388,
+        "tokens_after_truncation": 388,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "PS008",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 560,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 48,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "PS009",
+      "split": "test",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 602,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 90,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "PS010",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 626,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 114,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "CP001",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 515,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 3,
+        "prompt_truncated": true,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "CP002",
+      "split": "test",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 508,
+        "tokens_after_truncation": 508,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "CP003",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 573,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 61,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "CP004",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 601,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 89,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "CP005",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 599,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 87,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "UN001",
+      "split": "tune",
+      "supported": false,
+      "retrieved_count": 0,
+      "prompt_token_usage": null
+    },
+    {
+      "id": "UN002",
+      "split": "tune",
+      "supported": false,
+      "retrieved_count": 0,
+      "prompt_token_usage": null
+    },
+    {
+      "id": "UN003",
+      "split": "tune",
+      "supported": false,
+      "retrieved_count": 0,
+      "prompt_token_usage": null
+    },
+    {
+      "id": "UN004",
+      "split": "tune",
+      "supported": false,
+      "retrieved_count": 0,
+      "prompt_token_usage": null
+    },
+    {
+      "id": "UN005",
+      "split": "test",
+      "supported": false,
+      "retrieved_count": 0,
+      "prompt_token_usage": null
+    },
+    {
+      "id": "UN006",
+      "split": "tune",
+      "supported": false,
+      "retrieved_count": 0,
+      "prompt_token_usage": null
+    },
+    {
+      "id": "UN007",
+      "split": "tune",
+      "supported": false,
+      "retrieved_count": 0,
+      "prompt_token_usage": null
+    },
+    {
+      "id": "UN008",
+      "split": "test",
+      "supported": false,
+      "retrieved_count": 2,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 318,
+        "tokens_after_truncation": 318,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "AA001",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 479,
+        "tokens_after_truncation": 479,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "AA002",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 567,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 55,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "AA003",
+      "split": "test",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 564,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 52,
+        "prompt_truncated": true,
+        "context_fully_retained": false,
+        "question_fully_retained": false
+      }
+    },
+    {
+      "id": "AA004",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 1,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 315,
+        "tokens_after_truncation": 315,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 0,
+        "prompt_truncated": false,
+        "context_fully_retained": true,
+        "question_fully_retained": true
+      }
+    },
+    {
+      "id": "AA005",
+      "split": "tune",
+      "supported": true,
+      "retrieved_count": 4,
+      "prompt_token_usage": {
+        "tokens_before_truncation": 557,
+        "tokens_after_truncation": 512,
+        "model_max_input_tokens": 512,
+        "truncated_tokens": 45,
+        "prompt_truncated": true,
+        "context_fully_retained": true,
+        "question_fully_retained": false
+      }
+    }
+  ]
+}

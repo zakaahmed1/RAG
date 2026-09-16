@@ -1,53 +1,53 @@
 {
-  "questions": 30,
-  "supported_questions": 24,
-  "unsupported_questions": 6,
-  "hit_rate_at_k": 0.9166666666666666,
-  "evidence_recall": 0.9583333333333334,
-  "mrr": 0.90625,
-  "unsupported_rejection_accuracy": 1,
+  "questions": 40,
+  "supported_questions": 32,
+  "unsupported_questions": 8,
+  "hit_rate_at_k": 0.9375,
+  "evidence_recall": 0.96875,
+  "mrr": 0.8854166666666666,
+  "unsupported_rejection_accuracy": 0.875,
   "categories": {
     "ambiguous_adversarial": {
-      "questions": 4,
-      "supported_questions": 4,
+      "questions": 5,
+      "supported_questions": 5,
       "unsupported_questions": 0,
-      "hit_rate_at_k": 0.5,
-      "evidence_recall": 0.75,
+      "hit_rate_at_k": 0.6,
+      "evidence_recall": 0.8,
       "mrr": 1.0
     },
     "cross_policy_multi_document": {
-      "questions": 4,
-      "supported_questions": 4,
+      "questions": 5,
+      "supported_questions": 5,
       "unsupported_questions": 0,
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
       "mrr": 1.0
     },
     "direct_supported": {
-      "questions": 9,
-      "supported_questions": 9,
+      "questions": 12,
+      "supported_questions": 12,
       "unsupported_questions": 0,
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
-      "mrr": 0.9444444444444444
+      "mrr": 0.9583333333333334
     },
     "paraphrased_supported": {
-      "questions": 7,
-      "supported_questions": 7,
+      "questions": 10,
+      "supported_questions": 10,
       "unsupported_questions": 0,
       "hit_rate_at_k": 1,
       "evidence_recall": 1.0,
-      "mrr": 0.75
+      "mrr": 0.6833333333333333
     },
     "unsupported": {
-      "questions": 6,
+      "questions": 8,
       "supported_questions": 0,
-      "unsupported_questions": 6,
-      "unsupported_rejection_accuracy": 1
+      "unsupported_questions": 8,
+      "unsupported_rejection_accuracy": 0.875
     }
   },
   "provenance": {
-    "timestamp_utc": "2026-09-16T00:35:06.000868+00:00",
+    "timestamp_utc": "2026-09-16T00:15:57.577930+00:00",
     "git_commit_sha": "add883b1644e7b1f8f0de21efb59491332ab78e7",
     "git_worktree_dirty": false,
     "dataset_path": "evaluation\\questions.json",
@@ -55,7 +55,7 @@
     "python_version": "3.13.15",
     "evaluation": {
       "retrieval_only": true,
-      "split": "tune"
+      "split": null
     },
     "embedding": {
       "model": "sentence-transformers/all-MiniLM-L6-v2",
